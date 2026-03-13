@@ -10,13 +10,13 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --bg:#0e0f11;--bg2:#141519;--bg3:#1a1c21;--bg4:#20232a;
-  --border:#2a2d35;--border2:#363a44;
-  --texte:#c8cdd8;--texte-dim:#6b7180;--texte-clair:#e8ecf4;
+  --bg:#13151a;--bg2:#1a1d24;--bg3:#21252e;--bg4:#282d38;
+  --border:#333849;--border2:#424860;
+  --texte:#d4d9e8;--texte-dim:#8a92a8;--texte-clair:#f0f3fb;
   --accent:#c0392b;--accent-dim:#7a1f18;--accent-clair:#e74c3c;
-  --jaune:#d4aa3a;--jaune-dim:#8a6e20;
-  --bleu:#3a7bd5;--bleu-dim:#1e3f6e;
-  --vert:#27ae60;
+  --jaune:#ddb84a;--jaune-dim:#8a6e20;
+  --bleu:#4a8be0;--bleu-dim:#1e3f6e;
+  --vert:#2ecc71;
   --mono:'Share Tech Mono',monospace;
   --titre:'Oswald',sans-serif;
   --corps:'Source Serif 4',Georgia,serif;
@@ -86,7 +86,7 @@ html,body{height:100%;background:var(--bg);color:var(--texte);font-family:var(--
 .camp-carte.selectionne::before{opacity:0.04;}
 .camp-badge{font-family:var(--mono);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
 .camp-nom{font-family:var(--titre);font-size:18px;font-weight:600;color:var(--texte-clair);letter-spacing:1px;margin-bottom:6px;}
-.camp-desc{font-family:var(--corps);font-size:12px;color:var(--texte-dim);font-style:italic;line-height:1.5;}
+.camp-desc{font-family:var(--corps);font-size:12px;color:var(--texte);font-style:italic;line-height:1.5;}
 
 /* Slider age */
 .slider-wrap{display:flex;align-items:center;gap:12px;}
@@ -137,7 +137,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 .stat-bloc{background:var(--bg2);border:1px solid var(--border);padding:14px;}
 .bloc-titre{font-family:var(--mono);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--texte-dim);border-bottom:1px solid var(--border);padding-bottom:8px;margin-bottom:10px;}
 .stat-ligne{display:flex;justify-content:space-between;align-items:center;padding:3px 0;}
-.stat-nom{font-family:var(--mono);font-size:11px;color:var(--texte-dim);}
+.stat-nom{font-family:var(--mono);font-size:11px;color:var(--texte);}
 .stat-val{font-family:var(--mono);font-size:12px;color:var(--jaune);font-weight:bold;}
 .stat-barre-wrap{background:var(--bg4);height:2px;margin-top:3px;margin-bottom:6px;overflow:hidden;}
 .stat-barre{height:100%;background:var(--accent);transition:width 0.4s ease;}
@@ -159,11 +159,11 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 
 /* ── PANNEAU JEU ── */
 .jeu-panel{flex:1;display:flex;flex-direction:column;min-width:0;gap:10px;}
-#recit{flex:1;background:var(--bg2);border:1px solid var(--border);padding:24px;overflow-y:auto;min-height:0;font-family:var(--corps);}
+#recit{flex:1;background:var(--bg2);border:1px solid var(--border2);padding:24px;overflow-y:auto;min-height:0;font-family:var(--corps);}
 .entree{margin-bottom:22px;animation:fadeIn 0.4s ease;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(5px);}to{opacity:1;transform:translateY(0);}}
-.entree p{font-size:15px;line-height:1.9;color:var(--texte);margin-bottom:10px;}
-.action-joueur{font-family:var(--mono);font-size:12px;color:var(--texte-dim);padding:8px 14px;border-left:2px solid var(--border2);margin-bottom:14px;letter-spacing:0.5px;}
+.entree p{font-size:15px;line-height:1.9;color:var(--texte-clair);margin-bottom:10px;}
+.action-joueur{font-family:var(--mono);font-size:12px;color:var(--texte);padding:8px 14px;border-left:2px solid var(--border2);margin-bottom:14px;letter-spacing:0.5px;}
 .maj-stats{font-family:var(--mono);font-size:11px;color:var(--jaune);padding:6px 10px;background:rgba(212,170,58,0.06);border-left:2px solid var(--jaune-dim);margin-top:8px;letter-spacing:1px;}
 .separateur{border:none;border-top:1px solid var(--border);margin:16px 0;opacity:0.5;}
 .curseur{display:inline-block;width:2px;height:14px;background:var(--accent);animation:clign 0.7s infinite;vertical-align:text-bottom;margin-left:2px;}
@@ -172,7 +172,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 /* Choix */
 .choix-bloc{background:var(--bg3);border:1px solid var(--border);padding:14px 16px;margin-top:12px;}
 .choix-titre{font-family:var(--mono);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--texte-dim);margin-bottom:10px;}
-.choix-btn{display:block;width:100%;text-align:left;background:none;border:1px solid var(--border);color:var(--texte);font-family:var(--corps);font-size:14px;padding:11px 14px;margin-bottom:7px;cursor:pointer;transition:all 0.2s;line-height:1.5;}
+.choix-btn{display:block;width:100%;text-align:left;background:none;border:1px solid var(--border2);color:var(--texte-clair);font-family:var(--corps);font-size:14px;padding:11px 14px;margin-bottom:7px;cursor:pointer;transition:all 0.2s;line-height:1.5;}
 .choix-btn:hover{background:rgba(192,57,43,0.1);border-color:var(--accent);color:var(--texte-clair);}
 .choix-btn:last-child{margin-bottom:0;}
 
