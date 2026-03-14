@@ -433,14 +433,18 @@ function lancerJeu() {
   if(document.getElementById('se-souvenir').checked) {
     localStorage.setItem('qk_api_key', cle);
   }
-  // Vérifier sauvegarde existante
+  // Vérifier sauvegarde existante — uniquement si même camp choisi
   const save = charger();
-  if(save && save.historique && save.historique.length > 0) {
+  if(save && save.historique && save.historique.length > 0 && save.camp === G.camp) {
     fromSave(save);
+    // Restaurer le camp et prénom choisis par le joueur (priorité sur la sauvegarde)
+    G.camp = save.camp;
+    G.prenom = document.getElementById('prenom-input').value.trim() || save.prenom;
     document.getElementById('ecran-setup').style.display = 'none';
     afficherReprise(save);
     return;
   }
+  // Camp différent ou pas de sauvegarde : nouvelle partie
   document.getElementById('ecran-setup').style.display = 'none';
   miseAJourUI();
   envoyerPremier();
