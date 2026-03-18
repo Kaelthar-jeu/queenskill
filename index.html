@@ -130,10 +130,10 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 .sauvegarde.sauve{color:var(--vert);}
 .sauvegarde.sauvegarde-en-cours{color:var(--jaune);}
 
-.main{display:flex;flex:1;gap:16px;padding:16px 0;min-height:0;}
+.main{display:block;flex:1;padding:16px 0;min-height:0;}
 
 /* ── PANNEAU STATS ── */
-.stats-panel{width:210px;flex-shrink:0;display:flex;flex-direction:column;gap:12px;}
+.stats-panel{display:none;}
 .stat-bloc{background:var(--bg2);border:1px solid var(--border);padding:14px;}
 .bloc-titre{font-family:var(--mono);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--texte-dim);border-bottom:1px solid var(--border);padding-bottom:8px;margin-bottom:10px;}
 .stat-ligne{display:flex;justify-content:space-between;align-items:center;padding:3px 0;}
@@ -155,14 +155,28 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 .inv-vide{font-family:var(--mono);font-size:11px;color:var(--border2);font-style:italic;}
 
 .btn-premium{width:100%;padding:12px;background:linear-gradient(135deg,var(--accent),var(--jaune-dim));color:#fff;border:none;border-radius:2px;font-family:var(--mono);font-size:10px;letter-spacing:2px;cursor:pointer;text-transform:uppercase;transition:opacity 0.2s;margin-top:4px;}
+
+/* Panneau déroulant */
+.qk-panel-btn{background:none;border:1px solid var(--border);color:var(--texte-dim);font-family:var(--mono);font-size:9px;padding:4px 10px;cursor:pointer;transition:all 0.2s;letter-spacing:1px;text-transform:uppercase;}
+.qk-panel-btn:hover{border-color:var(--accent-clair);color:var(--jaune);}
+#qk-panel{display:none;background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 0;}
+#qk-panel.open{display:block;}
+.qk-inner{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;}
+.qk-title{font-family:var(--mono);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--texte-dim);border-bottom:1px solid var(--border);padding-bottom:5px;margin-bottom:8px;}
+.qk-row{display:flex;justify-content:space-between;align-items:center;padding:2px 0;font-size:11px;}
+.qk-key{color:var(--texte-dim);font-family:var(--mono);}
+.qk-val{color:var(--jaune);font-family:var(--mono);font-weight:bold;}
+.qk-bar-wrap{background:var(--bg4);height:2px;margin-top:1px;margin-bottom:4px;overflow:hidden;}
+.qk-bar{height:100%;transition:width 0.4s ease;}
+@media(max-width:700px){.qk-inner{grid-template-columns:1fr 1fr;}}
 .btn-premium:hover{opacity:0.85;}
 
 /* ── PANNEAU JEU ── */
-.jeu-panel{flex:1;display:flex;flex-direction:column;min-width:0;gap:10px;}
-#recit{flex:1;background:var(--bg2);border:1px solid var(--border2);padding:24px;overflow-y:auto;min-height:0;font-family:var(--corps);}
+.jeu-panel{flex:1;display:flex;flex-direction:column;min-width:0;}
+#recit{flex:1;background:var(--bg2);border:1px solid var(--border2);padding:24px;overflow-y:auto;min-height:calc(100svh - 140px);font-family:var(--corps);padding-bottom:85px;}
 .entree{margin-bottom:22px;animation:fadeIn 0.4s ease;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(5px);}to{opacity:1;transform:translateY(0);}}
-.entree p{font-size:15px;line-height:1.9;color:var(--texte-clair);margin-bottom:10px;}
+.entree p{font-size:21px;line-height:1.9;color:var(--texte-clair);margin-bottom:10px;}
 .action-joueur{font-family:var(--mono);font-size:12px;color:var(--texte);padding:8px 14px;border-left:2px solid var(--border2);margin-bottom:14px;letter-spacing:0.5px;}
 .maj-stats{font-family:var(--mono);font-size:11px;color:var(--jaune);padding:6px 10px;background:rgba(212,170,58,0.06);border-left:2px solid var(--jaune-dim);margin-top:8px;letter-spacing:1px;}
 .separateur{border:none;border-top:1px solid var(--border);margin:16px 0;opacity:0.5;}
@@ -172,12 +186,12 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 /* Choix */
 .choix-bloc{background:var(--bg3);border:1px solid var(--border);padding:14px 16px;margin-top:12px;}
 .choix-titre{font-family:var(--mono);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--texte-dim);margin-bottom:10px;}
-.choix-btn{display:block;width:100%;text-align:left;background:none;border:1px solid var(--border2);color:var(--texte-clair);font-family:var(--corps);font-size:14px;padding:11px 14px;margin-bottom:7px;cursor:pointer;transition:all 0.2s;line-height:1.5;}
+.choix-btn{display:block;width:100%;text-align:left;background:none;border:1px solid var(--border2);color:var(--texte-clair);font-family:var(--corps);font-size:18px;padding:13px 14px;margin-bottom:7px;cursor:pointer;transition:all 0.2s;line-height:1.5;}
 .choix-btn:hover{background:rgba(192,57,43,0.1);border-color:var(--accent);color:var(--texte-clair);}
 .choix-btn:last-child{margin-bottom:0;}
 
 /* Input */
-.input-zone{display:flex;gap:8px;flex-shrink:0;}
+.input-zone{display:flex;gap:8px;flex-shrink:0;position:fixed;bottom:0;left:0;right:0;background:var(--bg);border-top:1px solid var(--border);padding:10px 16px;z-index:100;max-width:1120px;margin:0 auto;box-sizing:border-box;}
 #input-joueur{flex:1;background:var(--bg2);border:1px solid var(--border);color:var(--texte);font-family:var(--corps);font-size:14px;padding:12px 14px;resize:none;height:52px;outline:none;transition:border-color 0.2s;border-radius:0;}
 #input-joueur:focus{border-color:var(--accent);}
 #input-joueur::placeholder{color:var(--texte-dim);font-style:italic;}
@@ -195,10 +209,9 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 @media(max-width:700px){
   #app{padding:0 8px;}
   .main{flex-direction:column;gap:8px;padding:8px 0;}
-  .stats-panel{width:100%;flex-direction:row;flex-wrap:wrap;gap:8px;}
-  .stats-panel > div{min-width:140px;flex:1;}
-  #recit{min-height:280px;max-height:50vh;padding:14px;}
-  .entree p{font-size:14px;}
+  #recit{min-height:calc(100vh - 160px);padding:16px;}
+  .entree p{font-size:19px;line-height:1.85;}
+  .choix-btn{font-size:17px;padding:13px 12px;}
   .logo{font-size:17px;}
   .camp-tag{display:none;}
   #ecran-setup{padding:12px;}
@@ -299,8 +312,60 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
     <div class="header-droite">
       <div class="camp-tag" id="camp-tag">—</div>
       <div class="sauvegarde" id="sauvegarde-ind">● prêt</div>
+      <button class="qk-panel-btn" onclick="toggleQkPanel()">Dossier ▾</button>
     </div>
   </header>
+
+  <!-- Panneau déroulant -->
+  <div id="qk-panel">
+    <div class="qk-inner">
+
+      <div>
+        <div class="qk-title">Personnage</div>
+        <div style="font-family:var(--titre);font-size:16px;font-weight:600;color:var(--texte-clair);letter-spacing:2px;text-transform:uppercase;" id="qk-nom">—</div>
+        <div style="font-family:var(--mono);font-size:9px;color:var(--accent);letter-spacing:2px;text-transform:uppercase;margin-top:3px;" id="qk-role">—</div>
+        <div class="qk-row" style="margin-top:8px;"><span class="qk-key">Acte</span><span class="qk-val" id="qk-acte">1</span></div>
+        <div class="qk-row"><span class="qk-key">Lieu</span><span class="qk-val" id="qk-lieu" style="font-size:10px;">Queens</span></div>
+        <div class="qk-row"><span class="qk-key">Choix</span><span class="qk-val" id="qk-choix">0</span></div>
+      </div>
+
+      <!-- Stats Vasquez (flic) -->
+      <div id="qk-bloc-vasquez">
+        <div class="qk-title">Vasquez</div>
+        <div class="qk-row"><span class="qk-key">Instinct</span><span class="qk-val" id="qk-instinct">50</span></div>
+        <div class="qk-bar-wrap"><div class="qk-bar" id="qk-b-instinct" style="width:50%;background:var(--bleu);"></div></div>
+        <div class="qk-row"><span class="qk-key">Méthode</span><span class="qk-val" id="qk-methode">50</span></div>
+        <div class="qk-bar-wrap"><div class="qk-bar" id="qk-b-methode" style="width:50%;background:var(--vert);"></div></div>
+        <div class="qk-row"><span class="qk-key">Liens</span><span class="qk-val" id="qk-liens">70</span></div>
+        <div class="qk-bar-wrap"><div class="qk-bar" id="qk-b-liens" style="width:70%;background:var(--jaune);"></div></div>
+        <div class="qk-row"><span class="qk-key">Exposition</span><span class="qk-val" id="qk-exposition">0</span></div>
+        <div class="qk-bar-wrap"><div class="qk-bar" id="qk-b-exposition" style="width:0%;background:var(--accent);"></div></div>
+      </div>
+
+      <!-- Stats Collectionneur (tueur) -->
+      <div id="qk-bloc-collectionneur">
+        <div class="qk-title">Le Collectionneur</div>
+        <div class="qk-row"><span class="qk-key">Contrôle</span><span class="qk-val" id="qk-controle">80</span></div>
+        <div class="qk-bar-wrap"><div class="qk-bar" id="qk-b-controle" style="width:80%;background:var(--bleu);"></div></div>
+        <div class="qk-row"><span class="qk-key">Invisibilité</span><span class="qk-val" id="qk-invisibilite">90</span></div>
+        <div class="qk-bar-wrap"><div class="qk-bar" id="qk-b-invisibilite" style="width:90%;background:var(--vert);"></div></div>
+        <div class="qk-row"><span class="qk-key">Compréhension</span><span class="qk-val" id="qk-comprehension">10</span></div>
+        <div class="qk-bar-wrap"><div class="qk-bar" id="qk-b-comprehension" style="width:10%;background:var(--jaune);"></div></div>
+        <div class="qk-row"><span class="qk-key">Décision</span><span class="qk-val" id="qk-decision">50</span></div>
+        <div class="qk-bar-wrap"><div class="qk-bar" id="qk-b-decision" style="width:50%;background:var(--accent);"></div></div>
+      </div>
+
+      <div>
+        <div class="qk-title">Inventaire</div>
+        <div id="qk-inventaire"><div style="font-size:11px;color:var(--texte-dim);font-style:italic;">Vide</div></div>
+        <div style="margin-top:10px;">
+          <button class="btn-premium" onclick="window.location.href='https://buy.stripe.com/test_8x2bJ05fU1yV3uKde1bZe00'">Premium — 7€/mois</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <div class="main">
     <div class="stats-panel">
 
@@ -536,8 +601,43 @@ function setSI(etat) {
 }
 
 // ── UI ──
+function toggleQkPanel(){
+  const p=document.getElementById('qk-panel');
+  const b=document.querySelector('.qk-panel-btn');
+  p.classList.toggle('open');
+  if(b)b.textContent=p.classList.contains('open')?'Dossier ▴':'Dossier ▾';
+}
+
 function miseAJourUI() {
   const isFlic = G.camp === 'flic';
+  // Nouveau panneau
+  const set=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v;};
+  const setW=(id,w,col)=>{const e=document.getElementById(id);if(e){e.style.width=Math.min(100,w)+'%';if(col)e.style.background=col;}};
+  set('qk-nom',G.prenom);
+  set('qk-role',isFlic?'Inspectrice NYPD':'Le Collectionneur');
+  set('qk-acte',G.acte);
+  set('qk-lieu',G.lieu);
+  set('qk-choix',G.nbChoix);
+  // Afficher le bon bloc stats
+  const bv=document.getElementById('qk-bloc-vasquez');
+  const bc=document.getElementById('qk-bloc-collectionneur');
+  if(bv)bv.style.display=isFlic?'block':'none';
+  if(bc)bc.style.display=isFlic?'none':'block';
+  if(isFlic){
+    const v=G.vasquez;
+    ['instinct','methode','liens','exposition'].forEach(s=>{
+      set('qk-'+s,v[s]);
+      setW('qk-b-'+s,Math.min(100,v[s]));
+    });
+  } else {
+    const c=G.collectionneur;
+    ['controle','invisibilite','comprehension','decision'].forEach(s=>{
+      set('qk-'+s,c[s]);
+      setW('qk-b-'+s,Math.min(100,c[s]));
+    });
+  }
+  const invQk=document.getElementById('qk-inventaire');
+  if(invQk)invQk.innerHTML=G.inventaire.length?G.inventaire.map(it=>`<div class="qk-row"><span class="qk-key">▸ ${it}</span></div>`).join(''):'<div style="font-size:11px;color:var(--texte-dim);font-style:italic;">Vide</div>';
   document.getElementById('camp-tag').textContent = isFlic ? 'Vasquez' : 'Collectionneur';
   document.getElementById('perso-nom').textContent = G.prenom;
   document.getElementById('perso-role').textContent = isFlic ? 'Inspectrice NYPD' : 'Le Collectionneur';
