@@ -23,21 +23,12 @@
 }
 html,body{height:100%;background:var(--bg);color:var(--texte);font-family:var(--corps);font-size:16px;line-height:1.7;overflow-x:hidden;}
 
-/* ── BARRE STUDIO ── */
 .studio-bar{background:#09090b;border-bottom:1px solid var(--border);padding:7px 16px;text-align:center;}
 .studio-bar a{color:var(--texte-dim);font-size:11px;text-decoration:none;letter-spacing:3px;font-family:var(--mono);transition:color 0.2s;}
 .studio-bar a:hover{color:var(--texte);}
 
-/* ── ÉCRAN INTRO ── */
-#ecran-intro{
-  position:fixed;inset:0;z-index:300;
-  background:var(--bg);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  padding:24px;
-  background-image:
-    linear-gradient(to bottom, transparent 60%, rgba(192,57,43,0.06) 100%),
-    repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255,255,255,0.012) 40px, rgba(255,255,255,0.012) 41px);
-}
+/* INTRO */
+#ecran-intro{position:fixed;inset:0;z-index:300;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;background-image:linear-gradient(to bottom,transparent 60%,rgba(192,57,43,0.06) 100%),repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(255,255,255,0.012) 40px,rgba(255,255,255,0.012) 41px);}
 .intro-contenu{max-width:520px;width:100%;text-align:center;}
 .intro-borough{font-family:var(--mono);font-size:10px;letter-spacing:6px;color:var(--texte-dim);text-transform:uppercase;margin-bottom:40px;animation:monter 0.8s ease 0.1s both;}
 .intro-titre{font-family:var(--titre);font-size:clamp(72px,18vw,130px);font-weight:600;color:var(--texte-clair);line-height:0.85;letter-spacing:2px;text-transform:uppercase;animation:monter 0.8s ease 0.25s both;}
@@ -45,15 +36,7 @@ html,body{height:100%;background:var(--bg);color:var(--texte);font-family:var(--
 .intro-sous{font-family:var(--mono);font-size:10px;letter-spacing:5px;color:var(--accent);text-transform:uppercase;margin:20px 0 32px;animation:monter 0.8s ease 0.4s both;}
 .intro-ligne{width:60px;height:1px;background:var(--border2);margin:0 auto 32px;animation:monter 0.8s ease 0.5s both;}
 .intro-accroche{font-family:var(--corps);font-size:14px;color:var(--texte-dim);font-style:italic;line-height:1.9;margin-bottom:48px;animation:monter 0.8s ease 0.6s both;}
-.btn-intro{
-  display:block;width:100%;max-width:300px;margin:0 auto;
-  background:transparent;border:1px solid var(--border2);
-  color:var(--texte);font-family:var(--titre);font-size:14px;font-weight:400;
-  letter-spacing:4px;padding:16px 32px;cursor:pointer;
-  text-transform:uppercase;transition:all 0.25s;
-  position:relative;overflow:hidden;
-  animation:monter 0.8s ease 0.75s both;
-}
+.btn-intro{display:block;width:100%;max-width:300px;margin:0 auto;background:transparent;border:1px solid var(--border2);color:var(--texte);font-family:var(--titre);font-size:14px;font-weight:400;letter-spacing:4px;padding:16px 32px;cursor:pointer;text-transform:uppercase;transition:all 0.25s;position:relative;overflow:hidden;animation:monter 0.8s ease 0.75s both;}
 .btn-intro::before{content:'';position:absolute;inset:0;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.3s ease;z-index:-1;}
 .btn-intro:hover{border-color:var(--accent);color:#fff;}
 .btn-intro:hover::before{transform:scaleX(1);}
@@ -61,13 +44,8 @@ html,body{height:100%;background:var(--bg);color:var(--texte);font-family:var(--
 .btn-reprendre:hover{color:var(--texte);}
 @keyframes monter{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 
-/* ── ÉCRAN SETUP ── */
-#ecran-setup{
-  display:none;position:fixed;inset:0;z-index:200;
-  background:var(--bg);overflow-y:auto;-webkit-overflow-scrolling:touch;
-  padding:20px;
-  background-image:repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(255,255,255,0.012) 40px,rgba(255,255,255,0.012) 41px);
-}
+/* SETUP */
+#ecran-setup{display:none;position:fixed;inset:0;z-index:200;background:var(--bg);overflow-y:auto;-webkit-overflow-scrolling:touch;padding:20px;background-image:repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(255,255,255,0.012) 40px,rgba(255,255,255,0.012) 41px);}
 .setup-box{max-width:560px;width:100%;margin:auto;padding:48px 0;}
 .setup-titre{font-family:var(--titre);font-size:28px;font-weight:600;letter-spacing:4px;color:var(--texte-clair);text-transform:uppercase;margin-bottom:4px;}
 .setup-sous{font-family:var(--mono);font-size:11px;color:var(--texte-dim);letter-spacing:2px;margin-bottom:40px;}
@@ -76,8 +54,6 @@ html,body{height:100%;background:var(--bg);color:var(--texte);font-family:var(--
 .setup-input{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:2px;color:var(--texte);font-family:var(--mono);font-size:14px;padding:12px 14px;outline:none;transition:border-color 0.2s;}
 .setup-input:focus{border-color:var(--accent);}
 .setup-input::placeholder{color:var(--texte-dim);}
-
-/* Choix du camp */
 .camp-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 .camp-carte{background:var(--bg3);border:1px solid var(--border);border-radius:2px;padding:20px;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden;}
 .camp-carte::before{content:'';position:absolute;inset:0;background:var(--accent);opacity:0;transition:opacity 0.2s;}
@@ -87,23 +63,15 @@ html,body{height:100%;background:var(--bg);color:var(--texte);font-family:var(--
 .camp-badge{font-family:var(--mono);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
 .camp-nom{font-family:var(--titre);font-size:18px;font-weight:600;color:var(--texte-clair);letter-spacing:1px;margin-bottom:6px;}
 .camp-desc{font-family:var(--corps);font-size:12px;color:var(--texte);font-style:italic;line-height:1.5;}
-
-/* Slider age */
 .slider-wrap{display:flex;align-items:center;gap:12px;}
 .slider-age{flex:1;-webkit-appearance:none;height:2px;background:var(--border2);border-radius:1px;outline:none;}
 .slider-age::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;background:var(--accent);border-radius:50%;cursor:pointer;}
 .slider-val{font-family:var(--mono);font-size:14px;color:var(--jaune);min-width:30px;}
-
-/* Checkbox */
-.checkbox-wrap{display:flex;align-items:center;gap:10px;cursor:pointer;}
-.checkbox-wrap input{accent-color:var(--accent);width:14px;height:14px;cursor:pointer;}
-.checkbox-label{font-family:var(--mono);font-size:11px;color:var(--texte-dim);letter-spacing:1px;}
-
 .btn-setup{width:100%;background:var(--accent);border:none;border-radius:2px;color:#fff;font-family:var(--titre);font-size:14px;font-weight:400;letter-spacing:4px;padding:16px;cursor:pointer;text-transform:uppercase;transition:background 0.2s;margin-top:8px;}
 .btn-setup:hover{background:var(--accent-clair);}
 .btn-setup:disabled{background:var(--border2);cursor:not-allowed;}
 
-/* ── ÉCRAN REPRISE ── */
+/* REPRISE */
 #ecran-reprise{display:none;position:fixed;inset:0;z-index:250;background:rgba(14,15,17,0.96);align-items:center;justify-content:center;padding:20px;}
 .reprise-box{background:var(--bg2);border:1px solid var(--border);max-width:420px;width:100%;padding:36px;}
 .reprise-titre{font-family:var(--titre);font-size:22px;letter-spacing:3px;color:var(--texte-clair);text-transform:uppercase;margin-bottom:4px;}
@@ -119,7 +87,7 @@ html,body{height:100%;background:var(--bg);color:var(--texte);font-family:var(--
 .rbn{background:var(--bg3);color:var(--texte-dim);border:1px solid var(--border);}
 .rbn:hover{border-color:var(--accent);color:var(--texte);}
 
-/* ── APP PRINCIPALE ── */
+/* APP */
 #app{display:flex;flex-direction:column;min-height:100vh;max-width:1120px;margin:0 auto;padding:0 16px;}
 header{display:flex;align-items:center;justify-content:space-between;padding:16px 0 14px;border-bottom:1px solid var(--border);flex-shrink:0;}
 .logo{font-family:var(--titre);font-size:22px;font-weight:600;letter-spacing:4px;color:var(--texte-clair);text-transform:uppercase;}
@@ -129,10 +97,9 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 .sauvegarde{font-family:var(--mono);font-size:10px;color:var(--texte-dim);}
 .sauvegarde.sauve{color:var(--vert);}
 .sauvegarde.sauvegarde-en-cours{color:var(--jaune);}
-
 .main{display:block;flex:1;padding:16px 0;min-height:0;}
 
-/* ── PANNEAU STATS ── */
+/* STATS */
 .stats-panel{display:none;}
 .stat-bloc{background:var(--bg2);border:1px solid var(--border);padding:14px;}
 .bloc-titre{font-family:var(--mono);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--texte-dim);border-bottom:1px solid var(--border);padding-bottom:8px;margin-bottom:10px;}
@@ -144,17 +111,15 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 .stat-barre.bleue{background:var(--bleu);}
 .stat-barre.verte{background:var(--vert);}
 .stat-barre.jaune{background:var(--jaune);}
-
 .perso-bloc{text-align:center;padding:16px 14px;}
 .perso-nom{font-family:var(--titre);font-size:20px;font-weight:600;color:var(--texte-clair);letter-spacing:2px;text-transform:uppercase;}
 .perso-role{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-top:4px;}
 .perso-acte{font-family:var(--mono);font-size:9px;color:var(--texte-dim);margin-top:8px;letter-spacing:1px;}
-
 .inv-item{font-family:var(--mono);font-size:11px;color:var(--texte-dim);padding:3px 0;border-bottom:1px solid var(--border);}
 .inv-item:last-child{border-bottom:none;}
 .inv-vide{font-family:var(--mono);font-size:11px;color:var(--border2);font-style:italic;}
-
 .btn-premium{width:100%;padding:12px;background:linear-gradient(135deg,var(--accent),var(--jaune-dim));color:#fff;border:none;border-radius:2px;font-family:var(--mono);font-size:10px;letter-spacing:2px;cursor:pointer;text-transform:uppercase;transition:opacity 0.2s;margin-top:4px;}
+.btn-premium:hover{opacity:0.85;}
 
 /* Panneau déroulant */
 .qk-panel-btn{background:none;border:1px solid var(--border);color:var(--texte-dim);font-family:var(--mono);font-size:9px;padding:4px 10px;cursor:pointer;transition:all 0.2s;letter-spacing:1px;text-transform:uppercase;}
@@ -169,9 +134,8 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 .qk-bar-wrap{background:var(--bg4);height:2px;margin-top:1px;margin-bottom:4px;overflow:hidden;}
 .qk-bar{height:100%;transition:width 0.4s ease;}
 @media(max-width:700px){.qk-inner{grid-template-columns:1fr 1fr;}}
-.btn-premium:hover{opacity:0.85;}
 
-/* ── PANNEAU JEU ── */
+/* JEU */
 .jeu-panel{flex:1;display:flex;flex-direction:column;min-width:0;}
 #recit{flex:1;background:var(--bg2);border:1px solid var(--border2);padding:24px;overflow-y:auto;min-height:calc(100svh - 140px);font-family:var(--corps);padding-bottom:85px;}
 .entree{margin-bottom:22px;animation:fadeIn 0.4s ease;}
@@ -182,15 +146,11 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 .separateur{border:none;border-top:1px solid var(--border);margin:16px 0;opacity:0.5;}
 .curseur{display:inline-block;width:2px;height:14px;background:var(--accent);animation:clign 0.7s infinite;vertical-align:text-bottom;margin-left:2px;}
 @keyframes clign{0%,50%{opacity:1;}51%,100%{opacity:0;}}
-
-/* Choix */
 .choix-bloc{background:var(--bg3);border:1px solid var(--border);padding:14px 16px;margin-top:12px;}
 .choix-titre{font-family:var(--mono);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--texte-dim);margin-bottom:10px;}
 .choix-btn{display:block;width:100%;text-align:left;background:none;border:1px solid var(--border2);color:var(--texte-clair);font-family:var(--corps);font-size:18px;padding:13px 14px;margin-bottom:7px;cursor:pointer;transition:all 0.2s;line-height:1.5;}
 .choix-btn:hover{background:rgba(192,57,43,0.1);border-color:var(--accent);color:var(--texte-clair);}
 .choix-btn:last-child{margin-bottom:0;}
-
-/* Input */
 .input-zone{display:flex;gap:8px;flex-shrink:0;position:fixed;bottom:0;left:0;right:0;background:var(--bg);border-top:1px solid var(--border);padding:10px 16px;z-index:100;max-width:1120px;margin:0 auto;box-sizing:border-box;}
 #input-joueur{flex:1;background:var(--bg2);border:1px solid var(--border);color:var(--texte);font-family:var(--corps);font-size:14px;padding:12px 14px;resize:none;height:52px;outline:none;transition:border-color 0.2s;border-radius:0;}
 #input-joueur:focus{border-color:var(--accent);}
@@ -198,14 +158,10 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 #btn-envoyer{background:var(--accent);border:none;color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:2px;padding:0 20px;cursor:pointer;transition:background 0.2s;flex-shrink:0;text-transform:uppercase;}
 #btn-envoyer:hover{background:var(--accent-clair);}
 #btn-envoyer:disabled{background:var(--border2);cursor:not-allowed;}
-
-/* SCROLLBAR */
 ::-webkit-scrollbar{width:4px;}
 ::-webkit-scrollbar-track{background:var(--bg);}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover{background:var(--accent-dim);}
-
-/* MOBILE */
 @media(max-width:700px){
   #app{padding:0 8px;}
   .main{flex-direction:column;gap:8px;padding:8px 0;}
@@ -214,8 +170,6 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
   .choix-btn{font-size:17px;padding:13px 12px;}
   .logo{font-size:17px;}
   .camp-tag{display:none;}
-  #ecran-setup{padding:12px;}
-  .setup-box{padding:24px 0;}
   .camp-grid{grid-template-columns:1fr;}
 }
 </style>
@@ -226,7 +180,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
   <a href="https://recitgames.vercel.app">&#9664; RÉCIT GAMES</a>
 </div>
 
-<!-- ÉCRAN INTRO -->
+<!-- INTRO -->
 <div id="ecran-intro">
   <div class="intro-contenu">
     <div class="intro-borough">Queens · New York · Roman interactif</div>
@@ -243,20 +197,11 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
   </div>
 </div>
 
-<!-- ÉCRAN SETUP -->
+<!-- SETUP -->
 <div id="ecran-setup">
   <div class="setup-box">
     <div class="setup-titre">Queens Kill</div>
     <div class="setup-sous">Configuration · Récit Games</div>
-
-    <div class="setup-section">
-      <label class="setup-label">Clé API Anthropic</label>
-      <input class="setup-input" type="password" id="api-key-input" placeholder="sk-ant-api03-..." autocomplete="off"/>
-      <label class="checkbox-wrap" style="margin-top:8px;">
-        <input type="checkbox" id="se-souvenir"/>
-        <span class="checkbox-label">Se souvenir sur cet appareil</span>
-      </label>
-    </div>
 
     <div class="setup-section">
       <label class="setup-label">Choisis ton camp</label>
@@ -292,7 +237,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
   </div>
 </div>
 
-<!-- ÉCRAN REPRISE -->
+<!-- REPRISE -->
 <div id="ecran-reprise">
   <div class="reprise-box">
     <div class="reprise-titre">Queens Kill</div>
@@ -319,7 +264,6 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
   <!-- Panneau déroulant -->
   <div id="qk-panel">
     <div class="qk-inner">
-
       <div>
         <div class="qk-title">Personnage</div>
         <div style="font-family:var(--titre);font-size:16px;font-weight:600;color:var(--texte-clair);letter-spacing:2px;text-transform:uppercase;" id="qk-nom">—</div>
@@ -328,8 +272,6 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
         <div class="qk-row"><span class="qk-key">Lieu</span><span class="qk-val" id="qk-lieu" style="font-size:10px;">Queens</span></div>
         <div class="qk-row"><span class="qk-key">Choix</span><span class="qk-val" id="qk-choix">0</span></div>
       </div>
-
-      <!-- Stats Vasquez (flic) -->
       <div id="qk-bloc-vasquez">
         <div class="qk-title">Vasquez</div>
         <div class="qk-row"><span class="qk-key">Instinct</span><span class="qk-val" id="qk-instinct">50</span></div>
@@ -341,8 +283,6 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
         <div class="qk-row"><span class="qk-key">Exposition</span><span class="qk-val" id="qk-exposition">0</span></div>
         <div class="qk-bar-wrap"><div class="qk-bar" id="qk-b-exposition" style="width:0%;background:var(--accent);"></div></div>
       </div>
-
-      <!-- Stats Collectionneur (tueur) -->
       <div id="qk-bloc-collectionneur">
         <div class="qk-title">Le Collectionneur</div>
         <div class="qk-row"><span class="qk-key">Contrôle</span><span class="qk-val" id="qk-controle">80</span></div>
@@ -354,27 +294,23 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
         <div class="qk-row"><span class="qk-key">Décision</span><span class="qk-val" id="qk-decision">50</span></div>
         <div class="qk-bar-wrap"><div class="qk-bar" id="qk-b-decision" style="width:50%;background:var(--accent);"></div></div>
       </div>
-
       <div>
         <div class="qk-title">Inventaire</div>
         <div id="qk-inventaire"><div style="font-size:11px;color:var(--texte-dim);font-style:italic;">Vide</div></div>
         <div style="margin-top:10px;">
-          <button class="btn-premium" onclick="window.location.href='https://buy.stripe.com/test_8x2bJ05fU1yV3uKde1bZe00'">Premium — 7€/mois</button>
+          <button class="btn-premium" onclick="afficherSaisieCode()">Premium — 7€/mois</button>
         </div>
       </div>
-
     </div>
   </div>
 
   <div class="main">
     <div class="stats-panel">
-
       <div class="stat-bloc perso-bloc">
         <div class="perso-nom" id="perso-nom">—</div>
         <div class="perso-role" id="perso-role">—</div>
         <div class="perso-acte" id="perso-acte">Acte 1</div>
       </div>
-
       <div class="stat-bloc" id="bloc-vasquez" style="display:none;">
         <div class="bloc-titre">Vasquez</div>
         <div class="stat-ligne"><span class="stat-nom">Instinct</span><span class="stat-val" id="st-instinct">50</span></div>
@@ -386,7 +322,6 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
         <div class="stat-ligne"><span class="stat-nom">Exposition</span><span class="stat-val" id="st-exposition">0</span></div>
         <div class="stat-barre-wrap"><div class="stat-barre" id="b-exposition" style="width:0%"></div></div>
       </div>
-
       <div class="stat-bloc" id="bloc-collectionneur" style="display:none;">
         <div class="bloc-titre">Le Collectionneur</div>
         <div class="stat-ligne"><span class="stat-nom">Contrôle</span><span class="stat-val" id="st-controle">80</span></div>
@@ -398,25 +333,19 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
         <div class="stat-ligne"><span class="stat-nom">Décision</span><span class="stat-val" id="st-decision">50</span></div>
         <div class="stat-barre-wrap"><div class="stat-barre" id="b-decision" style="width:50%"></div></div>
       </div>
-
       <div class="stat-bloc">
         <div class="bloc-titre">Dossier</div>
         <div class="stat-ligne"><span class="stat-nom">Acte</span><span class="stat-val" id="d-acte">1</span></div>
         <div class="stat-ligne"><span class="stat-nom">Lieu</span><span class="stat-val" id="d-lieu" style="font-size:10px;">Queens</span></div>
         <div class="stat-ligne"><span class="stat-nom">Choix</span><span class="stat-val" id="d-choix">0</span></div>
       </div>
-
       <div class="stat-bloc">
         <div class="bloc-titre">Inventaire</div>
         <div id="inv-liste"><div class="inv-vide">Vide</div></div>
       </div>
-
       <div class="stat-bloc" style="padding:10px 14px;">
-        <button class="btn-premium" onclick="window.location.href='https://buy.stripe.com/test_8x2bJ05fU1yV3uKde1bZe00'">
-          Passer Premium — 7€/mois
-        </button>
+        <button class="btn-premium" onclick="afficherSaisieCode()">Passer Premium — 7€/mois</button>
       </div>
-
     </div>
 
     <div class="jeu-panel">
@@ -430,622 +359,317 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 </div>
 
 <script>
-// ── ÉTAT GLOBAL ──
 const G = {
-  apiKey: '',
-  camp: '', // 'flic' ou 'tueur'
-  prenom: '',
-  age: 38,
-  acte: 1,
-  lieu: 'Queens, New York',
-  nbChoix: 0,
-  inventaire: [],
-  historique: [],
-  saveTO: null,
-  // Stats Vasquez
-  vasquez: { instinct: 50, methode: 50, liens: 70, exposition: 0 },
-  // Stats Collectionneur
-  collectionneur: { controle: 80, invisibilite: 90, comprehension: 10, decision: 50 }
+  camp:'', prenom:'', age:38, acte:1, lieu:'Queens, New York',
+  nbChoix:0, inventaire:[], historique:[], saveTO:null,
+  vasquez:{instinct:50,methode:50,liens:70,exposition:0},
+  collectionneur:{controle:80,invisibilite:90,comprehension:10,decision:50}
 };
-
 const PAYWALL = 20;
 
-// ── SETUP ──
-function afficherSetup() {
-  document.getElementById('ecran-intro').style.display = 'none';
-  document.getElementById('ecran-setup').style.display = 'block';
+function afficherSetup(){
+  document.getElementById('ecran-intro').style.display='none';
+  document.getElementById('ecran-setup').style.display='block';
   window.scrollTo(0,0);
-  // Pré-remplir clé sauvegardée
-  const cleStock = localStorage.getItem('qk_api_key');
-  if(cleStock) {
-    document.getElementById('api-key-input').value = cleStock;
-    document.getElementById('se-souvenir').checked = true;
-  }
 }
 
-function choisirCamp(camp) {
-  G.camp = camp;
-  document.querySelectorAll('.camp-carte').forEach(c => c.classList.remove('selectionne'));
-  document.getElementById('camp-' + camp).classList.add('selectionne');
-  // Afficher prénom et age
-  document.getElementById('section-prenom').style.display = 'block';
-  document.getElementById('section-age').style.display = 'block';
-  if(camp === 'flic') {
-    document.getElementById('label-prenom').textContent = 'Prénom d\'Elena (ou laisse par défaut)';
-    document.getElementById('prenom-input').value = 'Elena';
-    document.getElementById('age-slider').value = 38;
-    document.getElementById('age-val').textContent = 38;
-  } else {
-    document.getElementById('label-prenom').textContent = 'Ton nom de couverture';
-    document.getElementById('prenom-input').value = 'Marcus';
-    document.getElementById('age-slider').value = 44;
-    document.getElementById('age-val').textContent = 44;
+function choisirCamp(camp){
+  G.camp=camp;
+  document.querySelectorAll('.camp-carte').forEach(c=>c.classList.remove('selectionne'));
+  document.getElementById('camp-'+camp).classList.add('selectionne');
+  document.getElementById('section-prenom').style.display='block';
+  document.getElementById('section-age').style.display='block';
+  if(camp==='flic'){
+    document.getElementById('label-prenom').textContent='Prénom d\'Elena (ou laisse par défaut)';
+    document.getElementById('prenom-input').value='Elena';
+    document.getElementById('age-slider').value=38;
+    document.getElementById('age-val').textContent=38;
+  }else{
+    document.getElementById('label-prenom').textContent='Ton nom de couverture';
+    document.getElementById('prenom-input').value='Marcus';
+    document.getElementById('age-slider').value=44;
+    document.getElementById('age-val').textContent=44;
   }
-  document.getElementById('btn-lancer').disabled = false;
+  document.getElementById('btn-lancer').disabled=false;
 }
 
-document.getElementById('age-slider').addEventListener('input', function() {
-  document.getElementById('age-val').textContent = this.value;
+document.getElementById('age-slider').addEventListener('input',function(){
+  document.getElementById('age-val').textContent=this.value;
 });
 
-function lancerJeu() {
-  const cle = document.getElementById('api-key-input').value.trim();
-  if(!cle) { alert('Entre ta clé API Anthropic.'); return; }
-  if(!G.camp) { alert('Choisis ton camp.'); return; }
-  G.apiKey = cle;
-  G.prenom = document.getElementById('prenom-input').value.trim() || (G.camp === 'flic' ? 'Elena' : 'Marcus');
-  G.age = parseInt(document.getElementById('age-slider').value);
-  if(document.getElementById('se-souvenir').checked) {
-    localStorage.setItem('qk_api_key', cle);
+function lancerJeu(){
+  if(!G.camp){alert('Choisis ton camp.');return;}
+  G.prenom=document.getElementById('prenom-input').value.trim()||(G.camp==='flic'?'Elena':'Marcus');
+  G.age=parseInt(document.getElementById('age-slider').value);
+  const save=charger();
+  if(save&&save.historique&&save.historique.length>0&&save.camp===G.camp){
+    fromSave(save);G.camp=save.camp;G.prenom=document.getElementById('prenom-input').value.trim()||save.prenom;
+    document.getElementById('ecran-setup').style.display='none';
+    afficherReprise(save);return;
   }
-  // Vérifier sauvegarde existante — uniquement si même camp choisi
-  const save = charger();
-  if(save && save.historique && save.historique.length > 0 && save.camp === G.camp) {
-    fromSave(save);
-    // Restaurer le camp et prénom choisis par le joueur (priorité sur la sauvegarde)
-    G.camp = save.camp;
-    G.prenom = document.getElementById('prenom-input').value.trim() || save.prenom;
-    document.getElementById('ecran-setup').style.display = 'none';
-    afficherReprise(save);
-    return;
-  }
-  // Camp différent ou pas de sauvegarde : nouvelle partie
-  document.getElementById('ecran-setup').style.display = 'none';
-  miseAJourUI();
-  envoyerPremier();
+  document.getElementById('ecran-setup').style.display='none';
+  miseAJourUI();envoyerPremier();
 }
 
-function clicReprendre() {
-  const save = charger();
-  if(!save) { afficherSetup(); return; }
-  const cleStock = localStorage.getItem('qk_api_key');
-  if(cleStock) G.apiKey = cleStock;
-  document.getElementById('ecran-intro').style.display = 'none';
+function clicReprendre(){
+  const save=charger();
+  if(!save){afficherSetup();return;}
+  document.getElementById('ecran-intro').style.display='none';
   afficherSetup();
-  setTimeout(() => {
-    if(save.camp === 'flic') choisirCamp('flic');
-    else choisirCamp('tueur');
-  }, 100);
+  setTimeout(()=>{if(save.camp==='flic')choisirCamp('flic');else choisirCamp('tueur');},100);
 }
 
-function afficherReprise(save) {
-  const d1 = new Date(save.date), d2 = new Date();
-  const h = Math.floor((d2 - d1) / 3600000);
-  const jr = Math.floor(h / 24);
-  const abs = jr > 0 ? `${jr} jour${jr>1?'s':''}` : `${h}h`;
-  document.getElementById('reprise-info').innerHTML = `
+function afficherReprise(save){
+  const d1=new Date(save.date),d2=new Date();
+  const h=Math.floor((d2-d1)/3600000),jr=Math.floor(h/24);
+  const abs=jr>0?`${jr} jour${jr>1?'s':''}`:`${h}h`;
+  document.getElementById('reprise-info').innerHTML=`
     <div class="reprise-ligne"><span class="reprise-cle">Personnage</span><span class="reprise-val">${save.prenom}</span></div>
-    <div class="reprise-ligne"><span class="reprise-cle">Camp</span><span class="reprise-val">${save.camp === 'flic' ? 'Elena Vasquez' : 'Le Collectionneur'}</span></div>
+    <div class="reprise-ligne"><span class="reprise-cle">Camp</span><span class="reprise-val">${save.camp==='flic'?'Elena Vasquez':'Le Collectionneur'}</span></div>
     <div class="reprise-ligne"><span class="reprise-cle">Acte</span><span class="reprise-val">${save.acte}</span></div>
     <div class="reprise-ligne"><span class="reprise-cle">Lieu</span><span class="reprise-val">${save.lieu}</span></div>
     <div class="reprise-ligne"><span class="reprise-cle">Absent depuis</span><span class="reprise-val">${abs}</span></div>`;
-  document.getElementById('ecran-reprise').style.display = 'flex';
-  document.getElementById('btn-continuer').onclick = () => {
-    document.getElementById('ecran-reprise').style.display = 'none';
+  document.getElementById('ecran-reprise').style.display='flex';
+  document.getElementById('btn-continuer').onclick=()=>{
+    document.getElementById('ecran-reprise').style.display='none';
     miseAJourUI();
-    envoyerMessage(`Je reprends. Je suis ${G.prenom}, ${G.camp === 'flic' ? 'inspectrice homicides NYPD' : 'le Collectionneur'}, acte ${G.acte}, à ${G.lieu}. Résume brièvement la situation et propose mes choix.`);
+    envoyerMessage(`Je reprends. Je suis ${G.prenom}, ${G.camp==='flic'?'inspectrice homicides NYPD':'le Collectionneur'}, acte ${G.acte}, à ${G.lieu}. Résume brièvement la situation et propose mes choix.`);
   };
-  document.getElementById('btn-nouvelle').onclick = () => {
-    reinitialiser();
-    document.getElementById('ecran-reprise').style.display = 'none';
-    miseAJourUI();
-    envoyerPremier();
+  document.getElementById('btn-nouvelle').onclick=()=>{
+    reinitialiser();document.getElementById('ecran-reprise').style.display='none';
+    miseAJourUI();envoyerPremier();
   };
 }
 
-// ── SAUVEGARDE ──
-function sauvegarder() {
-  const data = {
-    camp: G.camp, prenom: G.prenom, age: G.age,
-    acte: G.acte, lieu: G.lieu, nbChoix: G.nbChoix,
-    inventaire: G.inventaire,
-    vasquez: G.vasquez, collectionneur: G.collectionneur,
-    historique: G.historique.slice(-20),
-    date: new Date().toISOString()
-  };
-  localStorage.setItem('queens_kill_save', JSON.stringify(data));
+function sauvegarder(){
+  const data={camp:G.camp,prenom:G.prenom,age:G.age,acte:G.acte,lieu:G.lieu,nbChoix:G.nbChoix,inventaire:G.inventaire,vasquez:G.vasquez,collectionneur:G.collectionneur,historique:G.historique.slice(-20),date:new Date().toISOString()};
+  localStorage.setItem('queens_kill_save',JSON.stringify(data));
 }
+function charger(){const d=localStorage.getItem('queens_kill_save');if(!d)return null;try{return JSON.parse(d);}catch(e){return null;}}
+function fromSave(s){G.camp=s.camp;G.prenom=s.prenom;G.age=s.age;G.acte=s.acte;G.lieu=s.lieu;G.nbChoix=s.nbChoix||0;G.inventaire=s.inventaire||[];G.vasquez=s.vasquez||G.vasquez;G.collectionneur=s.collectionneur||G.collectionneur;G.historique=s.historique||[];}
+function reinitialiser(){G.acte=1;G.lieu='Queens, New York';G.nbChoix=0;G.inventaire=[];G.historique=[];G.vasquez={instinct:50,methode:50,liens:70,exposition:0};G.collectionneur={controle:80,invisibilite:90,comprehension:10,decision:50};}
+function autoSave(){if(G.saveTO)clearTimeout(G.saveTO);setSI('sauvegarde-en-cours');G.saveTO=setTimeout(()=>{sauvegarder();setSI('sauve');setTimeout(()=>setSI(''),2000);},500);}
+function setSI(etat){const el=document.getElementById('sauvegarde-ind');el.className='sauvegarde'+(etat?' '+etat:'');el.textContent=etat==='sauvegarde-en-cours'?'↑ sauvegarde...':etat==='sauve'?'✓ sauvegardé':'● prêt';}
 
-function charger() {
-  const d = localStorage.getItem('queens_kill_save');
-  if(!d) return null;
-  try { return JSON.parse(d); } catch(e) { return null; }
-}
+function toggleQkPanel(){const p=document.getElementById('qk-panel');const b=document.querySelector('.qk-panel-btn');p.classList.toggle('open');if(b)b.textContent=p.classList.contains('open')?'Dossier ▴':'Dossier ▾';}
 
-function fromSave(s) {
-  G.camp = s.camp; G.prenom = s.prenom; G.age = s.age;
-  G.acte = s.acte; G.lieu = s.lieu; G.nbChoix = s.nbChoix || 0;
-  G.inventaire = s.inventaire || [];
-  G.vasquez = s.vasquez || G.vasquez;
-  G.collectionneur = s.collectionneur || G.collectionneur;
-  G.historique = s.historique || [];
-}
-
-function reinitialiser() {
-  G.acte = 1; G.lieu = 'Queens, New York'; G.nbChoix = 0;
-  G.inventaire = []; G.historique = [];
-  G.vasquez = { instinct: 50, methode: 50, liens: 70, exposition: 0 };
-  G.collectionneur = { controle: 80, invisibilite: 90, comprehension: 10, decision: 50 };
-}
-
-function autoSave() {
-  if(G.saveTO) clearTimeout(G.saveTO);
-  setSI('sauvegarde-en-cours');
-  G.saveTO = setTimeout(() => { sauvegarder(); setSI('sauve'); setTimeout(() => setSI(''), 2000); }, 500);
-}
-
-function setSI(etat) {
-  const el = document.getElementById('sauvegarde-ind');
-  el.className = 'sauvegarde' + (etat ? ' ' + etat : '');
-  el.textContent = etat === 'sauvegarde-en-cours' ? '↑ sauvegarde...' : etat === 'sauve' ? '✓ sauvegardé' : '● prêt';
-}
-
-// ── UI ──
-function toggleQkPanel(){
-  const p=document.getElementById('qk-panel');
-  const b=document.querySelector('.qk-panel-btn');
-  p.classList.toggle('open');
-  if(b)b.textContent=p.classList.contains('open')?'Dossier ▴':'Dossier ▾';
-}
-
-function miseAJourUI() {
-  const isFlic = G.camp === 'flic';
-  // Nouveau panneau
+function miseAJourUI(){
+  const isFlic=G.camp==='flic';
   const set=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v;};
   const setW=(id,w,col)=>{const e=document.getElementById(id);if(e){e.style.width=Math.min(100,w)+'%';if(col)e.style.background=col;}};
-  set('qk-nom',G.prenom);
-  set('qk-role',isFlic?'Inspectrice NYPD':'Le Collectionneur');
-  set('qk-acte',G.acte);
-  set('qk-lieu',G.lieu);
-  set('qk-choix',G.nbChoix);
-  // Afficher le bon bloc stats
-  const bv=document.getElementById('qk-bloc-vasquez');
-  const bc=document.getElementById('qk-bloc-collectionneur');
-  if(bv)bv.style.display=isFlic?'block':'none';
-  if(bc)bc.style.display=isFlic?'none':'block';
-  if(isFlic){
-    const v=G.vasquez;
-    ['instinct','methode','liens','exposition'].forEach(s=>{
-      set('qk-'+s,v[s]);
-      setW('qk-b-'+s,Math.min(100,v[s]));
-    });
-  } else {
-    const c=G.collectionneur;
-    ['controle','invisibilite','comprehension','decision'].forEach(s=>{
-      set('qk-'+s,c[s]);
-      setW('qk-b-'+s,Math.min(100,c[s]));
-    });
-  }
+  set('qk-nom',G.prenom);set('qk-role',isFlic?'Inspectrice NYPD':'Le Collectionneur');
+  set('qk-acte',G.acte);set('qk-lieu',G.lieu);set('qk-choix',G.nbChoix);
+  const bv=document.getElementById('qk-bloc-vasquez');const bc=document.getElementById('qk-bloc-collectionneur');
+  if(bv)bv.style.display=isFlic?'block':'none';if(bc)bc.style.display=isFlic?'none':'block';
+  if(isFlic){const v=G.vasquez;['instinct','methode','liens','exposition'].forEach(s=>{set('qk-'+s,v[s]);setW('qk-b-'+s,Math.min(100,v[s]));});}
+  else{const c=G.collectionneur;['controle','invisibilite','comprehension','decision'].forEach(s=>{set('qk-'+s,c[s]);setW('qk-b-'+s,Math.min(100,c[s]));});}
   const invQk=document.getElementById('qk-inventaire');
   if(invQk)invQk.innerHTML=G.inventaire.length?G.inventaire.map(it=>`<div class="qk-row"><span class="qk-key">▸ ${it}</span></div>`).join(''):'<div style="font-size:11px;color:var(--texte-dim);font-style:italic;">Vide</div>';
-  document.getElementById('camp-tag').textContent = isFlic ? 'Vasquez' : 'Collectionneur';
-  document.getElementById('perso-nom').textContent = G.prenom;
-  document.getElementById('perso-role').textContent = isFlic ? 'Inspectrice NYPD' : 'Le Collectionneur';
-  document.getElementById('perso-acte').textContent = `Acte ${G.acte}`;
-  document.getElementById('bloc-vasquez').style.display = isFlic ? 'block' : 'none';
-  document.getElementById('bloc-collectionneur').style.display = isFlic ? 'none' : 'block';
-  if(isFlic) {
-    const v = G.vasquez;
-    ['instinct','methode','liens','exposition'].forEach(s => {
-      document.getElementById('st-' + s).textContent = v[s];
-      document.getElementById('b-' + s).style.width = Math.min(100, v[s]) + '%';
-    });
-  } else {
-    const c = G.collectionneur;
-    ['controle','invisibilite','comprehension','decision'].forEach(s => {
-      document.getElementById('st-' + s).textContent = c[s];
-      document.getElementById('b-' + s).style.width = Math.min(100, c[s]) + '%';
-    });
-  }
-  document.getElementById('d-acte').textContent = G.acte;
-  document.getElementById('d-lieu').textContent = G.lieu;
-  document.getElementById('d-choix').textContent = G.nbChoix;
-  const invEl = document.getElementById('inv-liste');
-  if(G.inventaire.length) {
-    invEl.innerHTML = G.inventaire.map(it => `<div class="inv-item">&#9658; ${it}</div>`).join('');
-  } else {
-    invEl.innerHTML = '<div class="inv-vide">Vide</div>';
-  }
+  document.getElementById('camp-tag').textContent=isFlic?'Vasquez':'Collectionneur';
+  document.getElementById('perso-nom').textContent=G.prenom;
+  document.getElementById('perso-role').textContent=isFlic?'Inspectrice NYPD':'Le Collectionneur';
+  document.getElementById('perso-acte').textContent=`Acte ${G.acte}`;
+  document.getElementById('bloc-vasquez').style.display=isFlic?'block':'none';
+  document.getElementById('bloc-collectionneur').style.display=isFlic?'none':'block';
+  if(isFlic){const v=G.vasquez;['instinct','methode','liens','exposition'].forEach(s=>{document.getElementById('st-'+s).textContent=v[s];document.getElementById('b-'+s).style.width=Math.min(100,v[s])+'%';});}
+  else{const c=G.collectionneur;['controle','invisibilite','comprehension','decision'].forEach(s=>{document.getElementById('st-'+s).textContent=c[s];document.getElementById('b-'+s).style.width=Math.min(100,c[s])+'%';});}
+  document.getElementById('d-acte').textContent=G.acte;
+  document.getElementById('d-lieu').textContent=G.lieu;
+  document.getElementById('d-choix').textContent=G.nbChoix;
+  const invEl=document.getElementById('inv-liste');
+  if(G.inventaire.length){invEl.innerHTML=G.inventaire.map(it=>`<div class="inv-item">&#9658; ${it}</div>`).join('');}else{invEl.innerHTML='<div class="inv-vide">Vide</div>';}
 }
 
-// ── SYSTEM PROMPT ──
-function construireSP() {
-  const isFlic = G.camp === 'flic';
-  const v = G.vasquez, c = G.collectionneur;
+function construireSP(){
+  const isFlic=G.camp==='flic';
+  const v=G.vasquez,c=G.collectionneur;
   return `=== QUEENS KILL — CONTEUR ===
-Tu es le Conteur de Queens Kill. Tu es un auteur, pas un assistant. Tu ne sors JAMAIS du personnage. Tu réponds TOUJOURS en français. Deuxième personne : "tu vois", "tu sens", "tu choisis".
+Tu es le Conteur de Queens Kill. Tu es un auteur, pas un assistant. Tu ne sors JAMAIS du personnage. Tu réponds TOUJOURS en français. Deuxième personne.
 
 === VOIX LITTÉRAIRE ===
-Tu écris comme James Ellroy pour l'atmosphère Queens : prose brutale, rythme syncopé, détails urbains précis et sales. Jamais de glamour. Queens c'est le métro aérien, la pluie sur le béton, les kebabs à 3h du matin.
-Pour la psychologie, tu t'inspires de Thomas Harris : chaque personnage pense, calcule, observe. Le Collectionneur n'est jamais un monstre simple. Vasquez n'est jamais une héroïne simple.
-Pour les retournements, tu t'inspires de Jeffery Deaver : les apparences sont trompeuses, les fausses pistes sont réelles.
+James Ellroy pour l'atmosphère Queens : prose brutale, rythme syncopé, détails urbains précis.
+Thomas Harris pour la psychologie : chaque personnage pense, calcule, observe.
+Jeffery Deaver pour les retournements : les apparences sont trompeuses.
 
-RÈGLES D'ÉCRITURE STRICTES :
-- Jamais deux phrases consécutives avec la même structure.
-- Un détail sensoriel urbain précis par scène : pas "la rue" mais "Roosevelt Avenue sous le métro aérien, le vacarme du N train".
-- Mots INTERDITS : "soudain", "immédiatement", "brusquement", "incroyable", "impressionnant".
-- Les dialogues des PNJ ont des tics, des hésitations, des silences.
-- Quand le joueur échoue, ne l'épargne pas.
+RÈGLES D'ÉCRITURE : Jamais deux phrases consécutives avec la même structure. Un détail sensoriel urbain précis par scène. Mots INTERDITS : soudain, immédiatement, brusquement, incroyable, impressionnant. Quand le joueur échoue, ne l'épargne pas.
 
-=== PERSONNAGE ACTUEL ===
-Camp : ${isFlic ? 'VASQUEZ — la chasseuse' : 'LE COLLECTIONNEUR — l\'ombre'}
+=== PERSONNAGE ===
+Camp : ${isFlic?'VASQUEZ — la chasseuse':'LE COLLECTIONNEUR — l\'ombre'}
 Prénom : ${G.prenom} | Âge : ${G.age} ans
-Acte : ${G.acte}/8 | Lieu actuel : ${G.lieu}
-Nombre de choix effectués : ${G.nbChoix}
+Acte : ${G.acte}/8 | Lieu actuel : ${G.lieu} | Choix effectués : ${G.nbChoix}
 
-${isFlic ? `Stats Vasquez :
-Instinct:${v.instinct}/100 — sa capacité à sentir ce que les preuves ne montrent pas encore.
-Méthode:${v.methode}/100 — sa rigueur procedurale, ce qui la protège institutionnellement.
-Liens:${v.liens}/100 — ses relations avec Webb, Okonkwo, Dylan. Chaque lien peut s'user.
-Exposition:${v.exposition}/100 — combien le Collectionneur sait sur elle. Monte quand elle est imprudente.` : `Stats Collectionneur :
-Contrôle:${c.controle}/100 — sa maîtrise de la situation.
-Invisibilité:${c.invisibilite}/100 — son intégration sociale.
-Compréhension:${c.comprehension}/100 — combien il comprend Vasquez.
-Décision:${c.decision}/100 — son état interne face au choix final.`}
+${isFlic?`Stats Vasquez : Instinct:${v.instinct}/100 | Méthode:${v.methode}/100 | Liens:${v.liens}/100 | Exposition:${v.exposition}/100`:`Stats Collectionneur : Contrôle:${c.controle}/100 | Invisibilité:${c.invisibilite}/100 | Compréhension:${c.comprehension}/100 | Décision:${c.decision}/100`}
+Inventaire : ${G.inventaire.length?G.inventaire.join(', '):'Vide'}
 
-Inventaire : ${G.inventaire.length ? G.inventaire.join(', ') : 'Vide'}
-
-=== UNIVERS QUEENS ===
-Queens, New York, aujourd'hui. Borough le plus ethniquement divers du monde.
-Lieux clés : Jackson Heights, Flushing Meadows, Astoria, Jamaica, Forest Hills, Long Island City.
-Ambiance : pluie fréquente, métro aérien omniprésent, nuits denses, population diverse.
-
-${isFlic ? `=== ELENA VASQUEZ — CE QUI GUIDE SA NARRATION ===
+${isFlic?`=== VASQUEZ ===
 Inspectrice homicides NYPD Queens North. Fille de Jackson Heights. Divorcée, fils Dylan 12 ans.
 Elle traque un tueur en série qui met en scène ses victimes.
-Elle ne sait PAS qui est le Collectionneur avant l'Acte 4.
-Son supérieur : Lieutenant Marcus Webb. Partenaire : Détective Ray Okonkwo.
 RÈGLE ABSOLUE : Ne révèle JAMAIS l'identité du Collectionneur avant l'Acte 4.
-RÈGLE ABSOLUE : Les choix doivent mettre en tension instinct vs méthode, et/ou vitesse vs prudence.` : `=== LE COLLECTIONNEUR — CE QUI GUIDE SA NARRATION ===
+Les choix mettent en tension instinct vs méthode.`:`=== LE COLLECTIONNEUR ===
 Cadre financier, Forest Hills. 44 ans. Invisible. Intégré.
 Il observe Vasquez depuis le début. Il sait qui elle est. Elle ne sait pas encore qui il est.
-Il ne tue pas par rage — il classe, il complète une logique que le joueur découvre progressivement.
-RÈGLE ABSOLUE : Le Collectionneur est calme, jamais hystérique. Sa violence est froide et précise.
-RÈGLE ABSOLUE : Les choix mettent en tension contrôle vs risque, et/ou observer vs agir.`}
+Il ne tue pas par rage — il classe, il complète une logique.
+RÈGLE ABSOLUE : Calme, jamais hystérique. Violence froide et précise.
+Les choix mettent en tension contrôle vs risque.`}
 
-=== STRUCTURE ACTES ===
-Acte 1 — Flushing Meadows : premier corps découvert.
-Acte 2 — Le pattern : plusieurs scènes de crime liées.
-Acte 3 — Le contact : premier échange indirect entre eux.
-Acte 4 — La révélation : identité du Collectionneur révélée à Vasquez.
-Acte 5 — Le chasseur chassé : les rôles se brouillent.
-Acte 6 — Pertes : quelqu'un de proche est en danger.
-Acte 7 — La confrontation : face à face à Long Island City.
-Acte 8 — Le choix final : plusieurs fins possibles.
+=== ACTES ===
+Acte 1 — Flushing Meadows : premier corps. | Acte 2 — Le pattern. | Acte 3 — Le contact indirect. | Acte 4 — La révélation. | Acte 5 — Les rôles se brouillent. | Acte 6 — Pertes. | Acte 7 — Confrontation. | Acte 8 — Le choix final.
 
-=== FORMAT OBLIGATOIRE ===
-Narration (120-180 mots, prose serrée style Ellroy)
+=== RÈGLES ABSOLUES SUR LES CONSÉQUENCES ===
+L'IA NE PROTÈGE JAMAIS LE JOUEUR. Conséquences irréversibles. Stats : perte min -15, gain +8 à +12 max. Pas de récupération facile. Le joueur doit ressentir ses erreurs.
 
+=== FORMAT ===
+Narration (120-180 mots)
 [ STAT +X ] ou [ STAT -X ] si pertinent
-
 [ CHOIX ]
 1 — option
 2 — option
 3 — option
 
-=== RÈGLES ABSOLUES SUR LES CHOIX ===
-Maximum 3 choix. Jamais de bonne réponse évidente.
-INTERDIT de proposer un choix utilisant un objet absent de l'inventaire.
-Les choix doivent refléter QUI est le personnage, pas juste la situation.
-Chaque choix a des conséquences réelles — aucun n'est neutre.
-
-=== RÈGLES ABSOLUES SUR LES CONSÉQUENCES — PRIORITÉ MAXIMALE ===
-Ce jeu doit mordre. Les conséquences négatives sont aussi importantes que les positives.
-
-RÈGLE 1 — L'IA NE PROTÈGE JAMAIS LE JOUEUR.
-Si le joueur fait un mauvais choix, les conséquences sont réelles, visibles, et douloureuses. Pas d'échappatoire narrative. Pas de "heureusement". Pas de rattrapage magique.
-
-RÈGLE 2 — LES CONSÉQUENCES TOUCHENT L'HISTOIRE, PAS SEULEMENT LES STATS.
-Un mauvais choix change ce qui se passe dans le récit de façon irréversible. Exemples :
-- Le Collectionneur fait une erreur sur une scène de crime → Vasquez obtient un indice concret. L'étau se resserre. Ce n'est pas récupérable.
-- Le Collectionneur se fait repérer par un témoin → ce témoin existe maintenant, il peut parler.
-- Vasquez agit trop vite → elle brûle un témoin, il refuse de parler, cette piste est morte.
-- Vasquez prend un risque hors procédure → Webb le sait, sa position est fragilisée, les prochains choix institutionnels sont bloqués.
-- Un mauvais choix au mauvais moment peut coûter une vie — un personnage secondaire peut mourir pour de vrai.
-
-RÈGLE 3 — LES STATS REFLÈTENT LA GRAVITÉ.
-Un échec sérieux = minimum -15 sur la stat concernée. Pas -3, pas -5. -15 minimum. Une erreur grave = -25.
-Une réussite = +8 à +12. Les gains sont plus petits que les pertes. C'est voulu.
-
-RÈGLE 4 — PAS DE RÉCUPÉRATION FACILE.
-Ce qui est perdu ne revient pas facilement. Une relation brisée reste brisée plusieurs scènes. Un indice donné à Vasquez reste dans son dossier. Une mort reste une mort.
-
-RÈGLE 5 — LE JOUEUR DOIT RESSENTIR SES ERREURS.
-Quand le joueur fait un mauvais choix, la narration doit le montrer sans ambiguité. Pas de formulations douces. Pas de "tu te tires d'affaire de justesse". Si c'est une erreur, c'est une erreur — et le récit le dit clairement.
-
-RÈGLE 6 — LES BONS CHOIX NE SONT PAS ÉVIDENTS À L'AVANCE.
-Ce qui semble être le bon choix peut se révéler désastreux. Ce qui semble risqué peut payer. Le joueur ne doit jamais être certain de son choix avant de le faire.
-
 === PAYWALL ===
 Quand nbChoix atteint ${PAYWALL}, insère exactement : [ PAYWALL ]`.trim();
 }
 
-// ── PARSING RÉPONSE ──
-function parserReponse(texte) {
-  const mises = [];
-  const isFlic = G.camp === 'flic';
-
-  // Stats Vasquez
-  if(isFlic) {
-    texte = texte.replace(/\[\s*Instinct\s*([+\-])(\d+)\s*\]/gi, (_, op, v) => {
-      G.vasquez.instinct = Math.max(0, Math.min(100, G.vasquez.instinct + (op==='-'?-1:1)*parseInt(v)));
-      mises.push(`[Instinct${op}${v}]`); return '';
-    });
-    texte = texte.replace(/\[\s*M[eé]thode\s*([+\-])(\d+)\s*\]/gi, (_, op, v) => {
-      G.vasquez.methode = Math.max(0, Math.min(100, G.vasquez.methode + (op==='-'?-1:1)*parseInt(v)));
-      mises.push(`[Méthode${op}${v}]`); return '';
-    });
-    texte = texte.replace(/\[\s*Liens\s*([+\-])(\d+)\s*\]/gi, (_, op, v) => {
-      G.vasquez.liens = Math.max(0, Math.min(100, G.vasquez.liens + (op==='-'?-1:1)*parseInt(v)));
-      mises.push(`[Liens${op}${v}]`); return '';
-    });
-    texte = texte.replace(/\[\s*Exposition\s*([+\-])(\d+)\s*\]/gi, (_, op, v) => {
-      G.vasquez.exposition = Math.max(0, Math.min(100, G.vasquez.exposition + (op==='-'?-1:1)*parseInt(v)));
-      mises.push(`[Exposition${op}${v}]`); return '';
-    });
-  } else {
-    texte = texte.replace(/\[\s*Contr[oô]le\s*([+\-])(\d+)\s*\]/gi, (_, op, v) => {
-      G.collectionneur.controle = Math.max(0, Math.min(100, G.collectionneur.controle + (op==='-'?-1:1)*parseInt(v)));
-      mises.push(`[Contrôle${op}${v}]`); return '';
-    });
-    texte = texte.replace(/\[\s*Invisibilit[eé]\s*([+\-])(\d+)\s*\]/gi, (_, op, v) => {
-      G.collectionneur.invisibilite = Math.max(0, Math.min(100, G.collectionneur.invisibilite + (op==='-'?-1:1)*parseInt(v)));
-      mises.push(`[Invisibilité${op}${v}]`); return '';
-    });
-    texte = texte.replace(/\[\s*Compr[eé]hension\s*([+\-])(\d+)\s*\]/gi, (_, op, v) => {
-      G.collectionneur.comprehension = Math.max(0, Math.min(100, G.collectionneur.comprehension + (op==='-'?-1:1)*parseInt(v)));
-      mises.push(`[Compréhension${op}${v}]`); return '';
-    });
-    texte = texte.replace(/\[\s*D[eé]cision\s*([+\-])(\d+)\s*\]/gi, (_, op, v) => {
-      G.collectionneur.decision = Math.max(0, Math.min(100, G.collectionneur.decision + (op==='-'?-1:1)*parseInt(v)));
-      mises.push(`[Décision${op}${v}]`); return '';
-    });
+function parserReponse(texte){
+  const mises=[];
+  const isFlic=G.camp==='flic';
+  if(isFlic){
+    texte=texte.replace(/\[\s*Instinct\s*([+\-])(\d+)\s*\]/gi,(_,op,v)=>{G.vasquez.instinct=Math.max(0,Math.min(100,G.vasquez.instinct+(op==='-'?-1:1)*parseInt(v)));mises.push(`[Instinct${op}${v}]`);return '';});
+    texte=texte.replace(/\[\s*M[eé]thode\s*([+\-])(\d+)\s*\]/gi,(_,op,v)=>{G.vasquez.methode=Math.max(0,Math.min(100,G.vasquez.methode+(op==='-'?-1:1)*parseInt(v)));mises.push(`[Méthode${op}${v}]`);return '';});
+    texte=texte.replace(/\[\s*Liens\s*([+\-])(\d+)\s*\]/gi,(_,op,v)=>{G.vasquez.liens=Math.max(0,Math.min(100,G.vasquez.liens+(op==='-'?-1:1)*parseInt(v)));mises.push(`[Liens${op}${v}]`);return '';});
+    texte=texte.replace(/\[\s*Exposition\s*([+\-])(\d+)\s*\]/gi,(_,op,v)=>{G.vasquez.exposition=Math.max(0,Math.min(100,G.vasquez.exposition+(op==='-'?-1:1)*parseInt(v)));mises.push(`[Exposition${op}${v}]`);return '';});
+  }else{
+    texte=texte.replace(/\[\s*Contr[oô]le\s*([+\-])(\d+)\s*\]/gi,(_,op,v)=>{G.collectionneur.controle=Math.max(0,Math.min(100,G.collectionneur.controle+(op==='-'?-1:1)*parseInt(v)));mises.push(`[Contrôle${op}${v}]`);return '';});
+    texte=texte.replace(/\[\s*Invisibilit[eé]\s*([+\-])(\d+)\s*\]/gi,(_,op,v)=>{G.collectionneur.invisibilite=Math.max(0,Math.min(100,G.collectionneur.invisibilite+(op==='-'?-1:1)*parseInt(v)));mises.push(`[Invisibilité${op}${v}]`);return '';});
+    texte=texte.replace(/\[\s*Compr[eé]hension\s*([+\-])(\d+)\s*\]/gi,(_,op,v)=>{G.collectionneur.comprehension=Math.max(0,Math.min(100,G.collectionneur.comprehension+(op==='-'?-1:1)*parseInt(v)));mises.push(`[Compréhension${op}${v}]`);return '';});
+    texte=texte.replace(/\[\s*D[eé]cision\s*([+\-])(\d+)\s*\]/gi,(_,op,v)=>{G.collectionneur.decision=Math.max(0,Math.min(100,G.collectionneur.decision+(op==='-'?-1:1)*parseInt(v)));mises.push(`[Décision${op}${v}]`);return '';});
   }
-
-  // Acte
-  texte = texte.replace(/\[\s*Acte\s*(\d+)\s*\]/gi, (_, n) => {
-    G.acte = parseInt(n); mises.push(`[Acte ${n}]`); return '';
-  });
-
-  // Lieu
-  texte = texte.replace(/\[\s*Lieu\s*:\s*([^\]]+)\s*\]/gi, (_, l) => {
-    G.lieu = l.trim(); mises.push(`[${l.trim()}]`); return '';
-  });
-
-  // Inventaire — ajout
-  texte = texte.replace(/\[\s*([^\]]+?)\s*ajoutée?s?\s*à\s*l['']inventaire\s*\]/gi, (_, it) => {
-    const item = it.trim();
-    if(!G.inventaire.includes(item)) G.inventaire.push(item);
-    mises.push(`[${item}→inv]`); return '';
-  });
-
-  // Inventaire — retrait
-  texte = texte.replace(/\[\s*([^\]]+?)\s*retiré[e]?\s*de\s*l['']inventaire\s*\]/gi, (_, it) => {
-    G.inventaire = G.inventaire.filter(i => i.toLowerCase() !== it.trim().toLowerCase());
-    mises.push(`[${it.trim()}✗]`); return '';
-  });
-
-  // Paywall
-  if(texte.includes('[ PAYWALL ]') || texte.includes('[PAYWALL]')) {
-    texte = texte.replace(/\[\s*PAYWALL\s*\]/gi, '');
-    setTimeout(declencherPaywall, 600);
-  }
-
-  // Choix
-  let htmlChoix = '';
-  const mChoix = texte.match(/\[\s*CHOIX\s*\]([\s\S]*?)(?=\n\n|\n\[|$)/i);
-  if(mChoix) {
-    texte = texte.replace(mChoix[0], '').trim();
-    const lignes = mChoix[0].split('\n').filter(l => /^\d[\s—\-]/.test(l.trim()));
-    if(lignes.length) {
-      window._choix = lignes.map(l => l.replace(/^\d\s*[—\-]\s*/, '').trim());
-      htmlChoix = '<div class="choix-bloc"><div class="choix-titre">Que fais-tu ?</div>' +
-        window._choix.map((t, i) => `<button class="choix-btn" onclick="envoyerChoix(${i})">${lignes[i].trim()}</button>`).join('') +
-        '</div>';
+  texte=texte.replace(/\[\s*Acte\s*(\d+)\s*\]/gi,(_,n)=>{G.acte=parseInt(n);mises.push(`[Acte ${n}]`);return '';});
+  texte=texte.replace(/\[\s*Lieu\s*:\s*([^\]]+)\s*\]/gi,(_,l)=>{G.lieu=l.trim();mises.push(`[${l.trim()}]`);return '';});
+  texte=texte.replace(/\[\s*([^\]]+?)\s*ajoutée?s?\s*à\s*l['']inventaire\s*\]/gi,(_,it)=>{const item=it.trim();if(!G.inventaire.includes(item))G.inventaire.push(item);mises.push(`[${item}→inv]`);return '';});
+  texte=texte.replace(/\[\s*([^\]]+?)\s*retiré[e]?\s*de\s*l['']inventaire\s*\]/gi,(_,it)=>{G.inventaire=G.inventaire.filter(i=>i.toLowerCase()!==it.trim().toLowerCase());mises.push(`[${it.trim()}✗]`);return '';});
+  if(texte.includes('[ PAYWALL ]')||texte.includes('[PAYWALL]')){texte=texte.replace(/\[\s*PAYWALL\s*\]/gi,'');setTimeout(declencherPaywall,600);}
+  let htmlChoix='';
+  const mChoix=texte.match(/\[\s*CHOIX\s*\]([\s\S]*?)(?=\n\n|\n\[|$)/i);
+  if(mChoix){
+    texte=texte.replace(mChoix[0],'').trim();
+    const lignes=mChoix[0].split('\n').filter(l=>/^\d[\s—\-]/.test(l.trim()));
+    if(lignes.length){
+      window._choix=lignes.map(l=>l.replace(/^\d\s*[—\-]\s*/,'').trim());
+      htmlChoix='<div class="choix-bloc"><div class="choix-titre">Que fais-tu ?</div>'+window._choix.map((t,i)=>`<button class="choix-btn" onclick="envoyerChoix(${i})">${lignes[i].trim()}</button>`).join('')+'</div>';
     }
   }
-
   miseAJourUI();
-
-  const paragraphes = texte.trim().split(/\n+/).filter(l => l.trim()).map(l => `<p>${l.trim()}</p>`).join('');
-  const statHtml = mises.length ? `<div class="maj-stats">${mises.join('  ')}</div>` : '';
-  return paragraphes + statHtml + htmlChoix;
+  const paragraphes=texte.trim().split(/\n+/).filter(l=>l.trim()).map(l=>`<p>${l.trim()}</p>`).join('');
+  const statHtml=mises.length?`<div class="maj-stats">${mises.join('  ')}</div>`:'';
+  return paragraphes+statHtml+htmlChoix;
 }
 
-// ── PAYWALL ──
-function declencherPaywall() {
-  const recit = document.getElementById('recit');
-  const entree = document.createElement('div');
-  entree.className = 'entree';
-  entree.style.cssText = 'border-left:2px solid var(--accent);padding-left:16px;';
-  entree.innerHTML = `
-    <p style="font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;">— Accès limité —</p>
+function declencherPaywall(){
+  const recit=document.getElementById('recit');
+  const entree=document.createElement('div');entree.className='entree';entree.style.cssText='border-left:2px solid var(--accent);padding-left:16px;';
+  entree.innerHTML=`<p style="font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;">— Accès limité —</p>
     <p>Tu as atteint la limite gratuite de Queens Kill. Pour continuer l'enquête et découvrir qui est le Collectionneur, passe à l'abonnement Récit Games.</p>
     <div style="margin-top:14px;">
-      <button onclick="window.location.href='https://buy.stripe.com/test_8x2bJ05fU1yV3uKde1bZe00'" style="background:var(--accent);border:none;color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:2px;padding:12px 24px;cursor:pointer;text-transform:uppercase;margin-right:10px;">S'abonner — 7€/mois</button>
-      <button onclick="saisirCode()" style="background:none;border:1px solid var(--border2);color:var(--texte-dim);font-family:var(--mono);font-size:11px;letter-spacing:2px;padding:12px 24px;cursor:pointer;text-transform:uppercase;">J'ai un code</button>
+      <button onclick="window.location.href='https://buy.stripe.com/dRmdR90q9fKv8ku2jq04801'" style="background:var(--accent);border:none;color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:2px;padding:12px 24px;cursor:pointer;text-transform:uppercase;margin-right:10px;">S'abonner — 7€/mois</button>
+      <button onclick="afficherSaisieCode()" style="background:none;border:1px solid var(--border2);color:var(--texte-dim);font-family:var(--mono);font-size:11px;letter-spacing:2px;padding:12px 24px;cursor:pointer;text-transform:uppercase;">J'ai un code</button>
     </div>`;
-  recit.appendChild(entree);
-  recit.scrollTop = recit.scrollHeight;
-  document.getElementById('btn-envoyer').disabled = true;
-  document.getElementById('input-joueur').disabled = true;
+  recit.appendChild(entree);recit.scrollTop=recit.scrollHeight;
+  document.getElementById('btn-envoyer').disabled=true;document.getElementById('input-joueur').disabled=true;
 }
 
-function saisirCode() {
-  const code = prompt('Entre ton code abonnement Récit Games :');
-  if(!code) return;
-  fetch('https://recitgames-api.vercel.app/api/verify-code', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ code: code.trim().toUpperCase() })
-  })
-  .then(r => r.json())
-  .then(data => {
-    if(data.valid) {
-      G.nbChoix = 0;
-      document.getElementById('btn-envoyer').disabled = false;
-      document.getElementById('input-joueur').disabled = false;
+function afficherSaisieCode(){
+  const overlay=document.createElement('div');overlay.id='code-overlay';
+  overlay.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;';
+  overlay.innerHTML=`<div style="background:var(--bg2);border:1px solid var(--border);padding:36px 32px;max-width:400px;width:100%;text-align:center;"><div style="font-family:var(--titre);font-size:22px;font-weight:600;color:var(--texte-clair);letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;">Code abonnement</div><div style="font-size:12px;color:var(--texte-dim);margin-bottom:24px;font-family:var(--mono);">Entrez le code reçu après votre abonnement Récit Games.</div><input id="code-input" type="text" placeholder="RG-XXXX-XXXX" style="width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:2px;color:var(--texte);font-family:var(--mono);font-size:16px;padding:12px;text-align:center;letter-spacing:3px;text-transform:uppercase;outline:none;margin-bottom:8px;" oninput="this.value=this.value.toUpperCase()"/><div id="code-msg" style="font-size:12px;color:var(--accent-clair);min-height:18px;margin-bottom:16px;font-family:var(--mono);"></div><button id="code-btn" onclick="validerCode()" style="width:100%;background:var(--accent);color:#fff;border:none;border-radius:2px;padding:14px;font-family:var(--mono);font-size:11px;letter-spacing:2px;cursor:pointer;margin-bottom:10px;text-transform:uppercase;">Valider</button><button onclick="document.getElementById('code-overlay').remove()" style="background:none;border:none;color:var(--texte-dim);font-size:11px;cursor:pointer;text-decoration:underline;font-family:var(--mono);">Annuler</button></div>`;
+  document.body.appendChild(overlay);setTimeout(()=>document.getElementById('code-input')?.focus(),100);
+}
+
+async function validerCode(){
+  const code=(document.getElementById('code-input')?.value||'').trim().toUpperCase();
+  const msgEl=document.getElementById('code-msg');const btn=document.getElementById('code-btn');
+  if(!code||code.length<8){msgEl.textContent='Entrez votre code complet.';return;}
+  btn.disabled=true;btn.textContent='Vérification...';msgEl.textContent='';
+  try{
+    const res=await fetch('https://recitgames-api.vercel.app/api/verify-code',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code})});
+    const data=await res.json();
+    if(data.valid){
+      G.nbChoix=0;if(data.admin){}
+      document.getElementById('btn-envoyer').disabled=false;document.getElementById('input-joueur').disabled=false;
+      document.getElementById('code-overlay')?.remove();
       ajouterRecit('<p style="color:var(--vert);font-family:var(--mono);font-size:11px;letter-spacing:2px;">✓ Code validé. L\'enquête continue.</p>');
-    } else {
-      alert('Code invalide ou expiré.');
-    }
-  })
-  .catch(() => alert('Erreur de vérification. Réessaie.'));
+    }else{msgEl.textContent='Code invalide ou expiré.';btn.disabled=false;btn.textContent='Valider';}
+  }catch(err){msgEl.textContent='Erreur de vérification. Réessaie.';btn.disabled=false;btn.textContent='Valider';}
 }
 
-// ── STREAMING ──
-async function streamerMessage(msg) {
-  G.historique.push({ role: 'user', content: msg });
-  const recit = document.getElementById('recit');
-  const entree = document.createElement('div');
-  entree.className = 'entree';
-  recit.appendChild(entree);
-  recit.scrollTop = entree.offsetTop - 20;
-  const sp = document.createElement('p');
-  entree.appendChild(sp);
-  const cur = document.createElement('span');
-  cur.className = 'curseur';
-  sp.appendChild(cur);
-  let full = '';
-  try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': G.apiKey.replace(/[^\x20-\x7E]/g,'').trim(),
-        'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-direct-browser-access': 'true'
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        stream: true,
-        system: construireSP(),
-        messages: G.historique
-      })
+// ── STREAMING via proxy Vercel ──
+async function streamerMessage(msg){
+  G.historique.push({role:'user',content:msg});
+  const recit=document.getElementById('recit');
+  const entree=document.createElement('div');entree.className='entree';
+  recit.appendChild(entree);recit.scrollTop=entree.offsetTop-20;
+  const sp=document.createElement('p');entree.appendChild(sp);
+  const cur=document.createElement('span');cur.className='curseur';sp.appendChild(cur);
+  let full='';
+  try{
+    const res=await fetch('/api/chat',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({system:construireSP(),messages:G.historique,max_tokens:1000})
     });
-    if(!res.ok) {
-      const e = await res.json().catch(() => ({}));
-      throw new Error(e.error?.message || `Erreur ${res.status}`);
-    }
-    const reader = res.body.getReader();
-    const dec = new TextDecoder('utf-8', { fatal: false });
-    let buffer = '';
-    while(true) {
-      const { done, value } = await reader.read();
-      if(done) break;
-      buffer += dec.decode(value, { stream: true });
-      const lignes = buffer.split('\n');
-      buffer = lignes.pop();
-      for(const ligne of lignes) {
-        if(!ligne.startsWith('data: ')) continue;
-        const d = ligne.slice(6).trim();
-        if(d === '[DONE]') continue;
-        try {
-          const parsed = JSON.parse(d);
-          if(parsed.type === 'content_block_delta' && parsed.delta?.text) {
-            full += parsed.delta.text;
-            sp.textContent = full;
-            sp.appendChild(cur);
-          }
-        } catch(e) {}
+    if(!res.ok){const e=await res.json().catch(()=>({}));throw new Error(e.error||`Erreur ${res.status}`);}
+    const reader=res.body.getReader();const dec=new TextDecoder('utf-8',{fatal:false});
+    let buffer='';
+    while(true){
+      const{done,value}=await reader.read();if(done)break;
+      buffer+=dec.decode(value,{stream:true});
+      const lignes=buffer.split('\n');buffer=lignes.pop();
+      for(const ligne of lignes){
+        if(!ligne.startsWith('data: '))continue;
+        const d=ligne.slice(6).trim();if(d==='[DONE]')continue;
+        try{const p=JSON.parse(d);if(p.type==='content_block_delta'&&p.delta?.text){full+=p.delta.text;sp.textContent=full;sp.appendChild(cur);}}catch(e){}
       }
     }
-    if(buffer.startsWith('data: ')) {
-      const d = buffer.slice(6).trim();
-      try {
-        const p = JSON.parse(d);
-        if(p.type === 'content_block_delta' && p.delta?.text) full += p.delta.text;
-      } catch(e) {}
-    }
     cur.remove();
-    G.historique.push({ role: 'assistant', content: full });
-    if(G.historique.length > 20) G.historique = G.historique.slice(-20);
-    entree.innerHTML = parserReponse(full);
+    G.historique.push({role:'assistant',content:full});
+    if(G.historique.length>20)G.historique=G.historique.slice(-20);
+    entree.innerHTML=parserReponse(full);
     autoSave();
-  } catch(err) {
+  }catch(err){
     cur.remove();
-    entree.innerHTML = `<p style="color:var(--accent-clair);font-family:var(--mono);font-size:12px;">Erreur : ${err.message}</p>`;
+    entree.innerHTML=`<p style="color:var(--accent-clair);font-family:var(--mono);font-size:12px;">Erreur : ${err.message}</p>`;
   }
 }
 
-function ajouterRecit(html) {
-  const recit = document.getElementById('recit');
-  const e = document.createElement('div');
-  e.className = 'entree';
-  e.innerHTML = html;
-  recit.appendChild(e);
-  recit.scrollTop = recit.scrollHeight;
-}
+function ajouterRecit(html){const recit=document.getElementById('recit');const e=document.createElement('div');e.className='entree';e.innerHTML=html;recit.appendChild(e);recit.scrollTop=recit.scrollHeight;}
 
-async function envoyerMessage(msg) {
-  if(!msg.trim()) return;
-  const btn = document.getElementById('btn-envoyer');
-  const inp = document.getElementById('input-joueur');
-  btn.disabled = true; inp.disabled = true;
-  const recit = document.getElementById('recit');
-  if(recit.children.length > 0) {
-    const sep = document.createElement('div');
-    sep.className = 'entree';
-    sep.innerHTML = '<hr class="separateur"/>';
-    recit.appendChild(sep);
-  }
+async function envoyerMessage(msg){
+  if(!msg.trim())return;
+  const btn=document.getElementById('btn-envoyer');const inp=document.getElementById('input-joueur');
+  btn.disabled=true;inp.disabled=true;
+  const recit=document.getElementById('recit');
+  if(recit.children.length>0){const sep=document.createElement('div');sep.className='entree';sep.innerHTML='<hr class="separateur"/>';recit.appendChild(sep);}
   ajouterRecit(`<div class="action-joueur">&#9658; ${msg}</div>`);
-  inp.value = '';
-  G.nbChoix++;
+  inp.value='';G.nbChoix++;
   await streamerMessage(msg);
-  btn.disabled = false; inp.disabled = false;
-  if(window.innerWidth > 700) inp.focus();
+  btn.disabled=false;inp.disabled=false;
+  if(window.innerWidth>700)inp.focus();
 }
 
-function envoyerChoix(i) {
-  const t = window._choix && window._choix[i];
-  if(t) envoyerMessage(t);
+function envoyerChoix(i){const t=window._choix&&window._choix[i];if(t)envoyerMessage(t);}
+
+async function envoyerPremier(){
+  const isFlic=G.camp==='flic';
+  const msg=isFlic?`Je commence Queens Kill. Je suis ${G.prenom} Vasquez, inspectrice homicides NYPD Queens North, ${G.age} ans. Un corps vient d'être découvert à Flushing Meadows. Je suis sur les lieux. Commence l'Acte 1.`:`Je commence Queens Kill. Je suis le Collectionneur, ${G.age} ans, Forest Hills. J'observe de loin Flushing Meadows où mon travail vient d'être découvert. Je vois les flics arriver. Commence l'Acte 1.`;
+  miseAJourUI();await streamerMessage(msg);
 }
 
-async function envoyerPremier() {
-  const isFlic = G.camp === 'flic';
-  const msg = isFlic
-    ? `Je commence Queens Kill. Je suis ${G.prenom} Vasquez, inspectrice homicides NYPD Queens North, ${G.age} ans. Un corps vient d'être découvert à Flushing Meadows. Je suis sur les lieux. Commence l'Acte 1.`
-    : `Je commence Queens Kill. Je suis le Collectionneur, ${G.age} ans, Forest Hills. J'observe de loin Flushing Meadows où mon travail vient d'être découvert. Je vois les flics arriver. Commence l'Acte 1.`;
-  miseAJourUI();
-  await streamerMessage(msg);
-}
+document.getElementById('btn-envoyer').addEventListener('click',()=>{envoyerMessage(document.getElementById('input-joueur').value);});
+document.getElementById('input-joueur').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();envoyerMessage(e.target.value);}});
 
-// ── EVENTS ──
-document.getElementById('btn-envoyer').addEventListener('click', () => {
-  envoyerMessage(document.getElementById('input-joueur').value);
-});
-document.getElementById('input-joueur').addEventListener('keydown', e => {
-  if(e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); envoyerMessage(e.target.value); }
-});
-
-// Vérifier sauvegarde au chargement
-window.addEventListener('load', () => {
-  const save = charger();
-  if(save && save.historique && save.historique.length > 0) {
-    document.getElementById('btn-reprendre-intro').style.display = 'block';
-  }
+window.addEventListener('load',()=>{
+  const save=charger();
+  if(save&&save.historique&&save.historique.length>0){document.getElementById('btn-reprendre-intro').style.display='block';}
 });
 </script>
 </body>
