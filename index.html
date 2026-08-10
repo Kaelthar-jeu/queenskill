@@ -22,12 +22,9 @@
   --corps:'Source Serif 4',Georgia,serif;
 }
 html,body{height:100%;background:var(--bg);color:var(--texte);font-family:var(--corps);font-size:16px;line-height:1.7;overflow-x:hidden;}
-
 .studio-bar{background:#09090b;border-bottom:1px solid var(--border);padding:7px 16px;text-align:center;}
 .studio-bar a{color:var(--texte-dim);font-size:11px;text-decoration:none;letter-spacing:3px;font-family:var(--mono);transition:color 0.2s;}
 .studio-bar a:hover{color:var(--texte);}
-
-/* INTRO */
 #ecran-intro{position:fixed;inset:0;z-index:300;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;background-image:linear-gradient(to bottom,transparent 60%,rgba(192,57,43,0.06) 100%),repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(255,255,255,0.012) 40px,rgba(255,255,255,0.012) 41px);}
 .intro-contenu{max-width:520px;width:100%;text-align:center;}
 .intro-borough{font-family:var(--mono);font-size:10px;letter-spacing:6px;color:var(--texte-dim);text-transform:uppercase;margin-bottom:40px;animation:monter 0.8s ease 0.1s both;}
@@ -43,8 +40,6 @@ html,body{height:100%;background:var(--bg);color:var(--texte);font-family:var(--
 .btn-reprendre{display:none;margin:12px auto 0;background:none;border:none;color:var(--texte-dim);font-family:var(--mono);font-size:11px;letter-spacing:2px;cursor:pointer;text-decoration:underline;text-underline-offset:4px;transition:color 0.2s;animation:monter 0.8s ease 0.85s both;}
 .btn-reprendre:hover{color:var(--texte);}
 @keyframes monter{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-
-/* SETUP */
 #ecran-setup{display:none;position:fixed;inset:0;z-index:200;background:var(--bg);overflow-y:auto;-webkit-overflow-scrolling:touch;padding:20px;background-image:repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(255,255,255,0.012) 40px,rgba(255,255,255,0.012) 41px);}
 .setup-box{max-width:560px;width:100%;margin:auto;padding:48px 0;}
 .setup-titre{font-family:var(--titre);font-size:28px;font-weight:600;letter-spacing:4px;color:var(--texte-clair);text-transform:uppercase;margin-bottom:4px;}
@@ -70,8 +65,6 @@ html,body{height:100%;background:var(--bg);color:var(--texte);font-family:var(--
 .btn-setup{width:100%;background:var(--accent);border:none;border-radius:2px;color:#fff;font-family:var(--titre);font-size:14px;font-weight:400;letter-spacing:4px;padding:16px;cursor:pointer;text-transform:uppercase;transition:background 0.2s;margin-top:8px;}
 .btn-setup:hover{background:var(--accent-clair);}
 .btn-setup:disabled{background:var(--border2);cursor:not-allowed;}
-
-/* REPRISE */
 #ecran-reprise{display:none;position:fixed;inset:0;z-index:250;background:rgba(14,15,17,0.96);align-items:center;justify-content:center;padding:20px;}
 .reprise-box{background:var(--bg2);border:1px solid var(--border);max-width:420px;width:100%;padding:36px;}
 .reprise-titre{font-family:var(--titre);font-size:22px;letter-spacing:3px;color:var(--texte-clair);text-transform:uppercase;margin-bottom:4px;}
@@ -86,8 +79,6 @@ html,body{height:100%;background:var(--bg);color:var(--texte);font-family:var(--
 .rbp:hover{background:var(--accent-clair);}
 .rbn{background:var(--bg3);color:var(--texte-dim);border:1px solid var(--border);}
 .rbn:hover{border-color:var(--accent);color:var(--texte);}
-
-/* APP */
 #app{display:flex;flex-direction:column;min-height:100vh;max-width:1120px;margin:0 auto;padding:0 16px;}
 header{display:flex;align-items:center;justify-content:space-between;padding:16px 0 14px;border-bottom:1px solid var(--border);flex-shrink:0;}
 .logo{font-family:var(--titre);font-size:22px;font-weight:600;letter-spacing:4px;color:var(--texte-clair);text-transform:uppercase;}
@@ -98,8 +89,6 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 .sauvegarde.sauve{color:var(--vert);}
 .sauvegarde.sauvegarde-en-cours{color:var(--jaune);}
 .main{display:block;flex:1;padding:16px 0;min-height:0;}
-
-/* STATS */
 .stats-panel{display:none;}
 .stat-bloc{background:var(--bg2);border:1px solid var(--border);padding:14px;}
 .bloc-titre{font-family:var(--mono);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--texte-dim);border-bottom:1px solid var(--border);padding-bottom:8px;margin-bottom:10px;}
@@ -120,8 +109,6 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 .inv-vide{font-family:var(--mono);font-size:11px;color:var(--border2);font-style:italic;}
 .btn-premium{width:100%;padding:12px;background:linear-gradient(135deg,var(--accent),var(--jaune-dim));color:#fff;border:none;border-radius:2px;font-family:var(--mono);font-size:10px;letter-spacing:2px;cursor:pointer;text-transform:uppercase;transition:opacity 0.2s;margin-top:4px;}
 .btn-premium:hover{opacity:0.85;}
-
-/* Panneau déroulant */
 .qk-panel-btn{background:none;border:1px solid var(--border);color:var(--texte-dim);font-family:var(--mono);font-size:9px;padding:4px 10px;cursor:pointer;transition:all 0.2s;letter-spacing:1px;text-transform:uppercase;}
 .qk-panel-btn:hover{border-color:var(--accent-clair);color:var(--jaune);}
 #qk-panel{display:none;background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 0;}
@@ -134,8 +121,6 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 .qk-bar-wrap{background:var(--bg4);height:2px;margin-top:1px;margin-bottom:4px;overflow:hidden;}
 .qk-bar{height:100%;transition:width 0.4s ease;}
 @media(max-width:700px){.qk-inner{grid-template-columns:1fr 1fr;}}
-
-/* JEU */
 .jeu-panel{flex:1;display:flex;flex-direction:column;min-width:0;}
 #recit{flex:1;background:var(--bg2);border:1px solid var(--border2);padding:24px;overflow-y:auto;min-height:calc(100svh - 140px);font-family:var(--corps);padding-bottom:85px;}
 .entree{margin-bottom:22px;animation:fadeIn 0.4s ease;}
@@ -180,7 +165,6 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
   <a href="https://recitgames.vercel.app">&#9664; RÉCIT GAMES</a>
 </div>
 
-<!-- INTRO -->
 <div id="ecran-intro">
   <div class="intro-contenu">
     <div class="intro-borough">Queens · New York · Roman interactif</div>
@@ -197,12 +181,10 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
   </div>
 </div>
 
-<!-- SETUP -->
 <div id="ecran-setup">
   <div class="setup-box">
     <div class="setup-titre">Queens Kill</div>
     <div class="setup-sous">Configuration · Récit Games</div>
-
     <div class="setup-section">
       <label class="setup-label">Choisis ton camp</label>
       <div class="camp-grid">
@@ -218,12 +200,10 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
         </div>
       </div>
     </div>
-
     <div class="setup-section" id="section-prenom" style="display:none;">
       <label class="setup-label" id="label-prenom">Prénom du personnage</label>
       <input class="setup-input" type="text" id="prenom-input" maxlength="30"/>
     </div>
-
     <div class="setup-section" id="section-age" style="display:none;">
       <label class="setup-label">Âge</label>
       <div class="slider-wrap">
@@ -231,13 +211,11 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
         <span class="slider-val" id="age-val">38</span>
       </div>
     </div>
-
     <button class="btn-setup" id="btn-lancer" onclick="lancerJeu()" disabled>Entrer dans Queens</button>
     <p style="font-family:var(--mono);font-size:10px;color:var(--texte-dim);text-align:center;margin-top:12px;letter-spacing:1px;">Progression sauvegardée automatiquement</p>
   </div>
 </div>
 
-<!-- REPRISE -->
 <div id="ecran-reprise">
   <div class="reprise-box">
     <div class="reprise-titre">Queens Kill</div>
@@ -250,7 +228,6 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
   </div>
 </div>
 
-<!-- APP -->
 <div id="app">
   <header>
     <div class="logo">Queens<span>Kill</span></div>
@@ -261,7 +238,6 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
     </div>
   </header>
 
-  <!-- Panneau déroulant -->
   <div id="qk-panel">
     <div class="qk-inner">
       <div>
@@ -518,13 +494,21 @@ Acte 1 — Flushing Meadows : premier corps. | Acte 2 — Le pattern. | Acte 3 �
 === RÈGLES ABSOLUES SUR LES CONSÉQUENCES ===
 L'IA NE PROTÈGE JAMAIS LE JOUEUR. Conséquences irréversibles. Stats : perte min -15, gain +8 à +12 max. Pas de récupération facile. Le joueur doit ressentir ses erreurs.
 
-=== FORMAT ===
-Narration (120-180 mots)
-[ STAT +X ] ou [ STAT -X ] si pertinent
+=== FORMAT RÉPONSE — RÈGLE ABSOLUE ET NON NÉGOCIABLE ===
+Chaque réponse DOIT se terminer par exactement ce bloc, sans exception, sans variation :
+
 [ CHOIX ]
-1 — option
-2 — option
-3 — option
+1 — option précise
+2 — option précise
+3 — option précise
+
+INTERDICTIONS STRICTES :
+- Ne JAMAIS omettre le bloc [ CHOIX ]
+- Ne JAMAIS utiliser autre chose que le tiret long — (—) entre le numéro et le texte
+- Ne JAMAIS numéroter autrement que 1, 2, 3
+- Ne JAMAIS mettre de texte après les 3 choix sauf les balises système
+- Les balises [ STAT +X ] ou [ STAT -X ] vont TOUJOURS avant [ CHOIX ], jamais après
+- Ne JAMAIS reformater ou modifier cette structure
 
 === PAYWALL ===
 Quand nbChoix atteint ${PAYWALL}, insère exactement : [ PAYWALL ]`.trim();
@@ -594,7 +578,7 @@ async function validerCode(){
     const res=await fetch('https://recitgames-api.vercel.app/api/verify-code',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code})});
     const data=await res.json();
     if(data.valid){
-      G.nbChoix=0;if(data.admin){}
+      G.nbChoix=0;
       document.getElementById('btn-envoyer').disabled=false;document.getElementById('input-joueur').disabled=false;
       document.getElementById('code-overlay')?.remove();
       ajouterRecit('<p style="color:var(--vert);font-family:var(--mono);font-size:11px;letter-spacing:2px;">✓ Code validé. L\'enquête continue.</p>');
@@ -602,7 +586,6 @@ async function validerCode(){
   }catch(err){msgEl.textContent='Erreur de vérification. Réessaie.';btn.disabled=false;btn.textContent='Valider';}
 }
 
-// ── STREAMING via proxy Vercel ──
 async function streamerMessage(msg){
   G.historique.push({role:'user',content:msg});
   const recit=document.getElementById('recit');
